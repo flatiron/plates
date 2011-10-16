@@ -10,7 +10,7 @@
       "url": "git://github.com/flatiron/plates.git" 
   }],
   "devDependencies" : {
-    "nodeunit" : "*"
+    "vows" : "*"
   },
   "engines": ["node"],
   "main" : "./lib/index.js"
