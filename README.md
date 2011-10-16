@@ -14,6 +14,10 @@ Plates (short for templates) binds data to markup. There's NO special syntax. It
 
 On the Server
 
+```bash
+  $npm install plates
+```
+
 ```js
 
   var Plate = require('plates');
@@ -33,6 +37,10 @@ On the Server
 ```     
 
 On the client
+
+```html
+  <script type="text/javascript" src="plates.js"></script>
+```
 
 ```html
 
