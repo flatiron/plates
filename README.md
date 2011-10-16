@@ -13,6 +13,7 @@ Plates (short for templates) binds data to markup. There's NO special syntax. It
 ## Usage
 
 On the Server
+
 ```js
 
   var Plate = require('plates');
