@@ -34,9 +34,9 @@ On the Server
 
 On the client
 
-```js
+```html
 
-  <script>
+  <script type="text/javascript">
   
     var plate = new Plate;
 
