@@ -36,7 +36,9 @@ Create an instance of the constructor, provide it html and data. Do something in
   // with the output, you could serve it up or process it further with JSDOM
   //
 
+  ...
   response.end(output);
+  ...
 
 ```     
 
@@ -64,12 +66,12 @@ Create an instance of the constructor, provide it html and data. Append the new 
     //
     // with the output, append it to the current document or use it however you want.
     //
+    ...
     document.body.appendAdjacentHTML(output); // append this to the DOM using native DOM APIs.
-
-    // or... use some jQuery
-
+    ...
     $('body').appendChild(output);
-  
+    ...
+
   </script>
   
 ```
