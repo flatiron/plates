@@ -1,7 +1,7 @@
 
 ## Synopsys
 
-Plates (short for templates) binds data to markup. There's NO special syntax. It works in the browser and in node.js!
+Plates (short for templates) binds data to markup. There's NO special syntax. It works in the browser and in node.js! The right way to do this is with a DOM. Unfortunately, at the moment, the DOM is slow. On the server, it is quite slow. So Plates implements a very loose HTML parser.
 
 ## Motivation
 
@@ -76,4 +76,28 @@ Create an instance of the constructor, provide it html and data. Append the new 
   
 ```
 
+### Defining explicit instructions for matching data keys with html tags.
+
+Plates will try to match in the following order `data-bind`, which allows you to make an explicit corollation between a data key and an element. If there is no `data-bind` attribute in the tag, Plates will attempt to match the data key to the `id` of the element. If there is no match on the `id` or the `name` attributes of the element then the class attribute will be parsed by splitting its value by whitespace.
+
+#### An example of matching a data key to a class
+
+```js
+
+  var plate = new Plate;
+
+  var html = '<div id="test" class="sample example">Old Value</div>';
+  var data = { "sample": "New Value" };
+
+  //
+  // propertyMap establishes the preferred mapping of data-key to tag property.
+  //
+  var options = { "sample": "class" };
+  var output = plate(html, data, options).html();
+
+```
+
 ## License
+
+
+
