@@ -34,7 +34,7 @@ plate.data(); // `{ "foo": "bar" }`
 //
 // bind the html and data for an instance.
 // 
-plate.bind(); // `<div id="foo">bar</div><div class="foo"></div>`
+console.log(plate.bind()); // `<div id="foo">bar</div><div class="foo"></div>`
 
 //
 // bind the html and data with explicit instructions detailing
