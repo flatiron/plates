@@ -30,7 +30,7 @@ Create an instance of the constructor, provide it html and data. Do something in
   var html = '<div id="test">Old Value</div>';
   var data = { "test": "New Value" };
 
-  var output = plate(html, data).html(); 
+  var output = plate(html, data).bind(); 
 
   //
   // with the output, you could serve it up or process it further with JSDOM
@@ -61,7 +61,7 @@ Create an instance of the constructor, provide it html and data. Append the new 
     var html = '<div id="test">Old Value</div>';
     var data = { "test": "New Value" };
 
-    var output = plate(html, data).html();
+    var output = plate(html, data).bind();
 
     //
     // with the output, append it to the current document or use it however you want.
@@ -92,8 +92,8 @@ Plates will try to match in the following order `data-bind`, which allows you to
   //
   // propertyMap establishes the preferred mapping of data-key to tag property.
   //
-  var options = { "sample": "class" };
-  var output = plate(html, data, options).html();
+  var map = { "sample": "class" };
+  var output = plate(html, data).bind(map);
 
 ```
 
