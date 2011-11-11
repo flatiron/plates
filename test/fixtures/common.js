@@ -12,23 +12,33 @@ function get(name, extension) {
   }
 };
 
-common.render = function(name, data, map) {
+common.render = function(name, data, map, method) {
   var plate = new Plate(),
       html = get(name, 'html');
 
-  return plate.html(html).data(data).bind(map);
+  plate.html(html).data(data);
+
+  if (method === 'bind') {
+    return plate.bind(map);
+  } else if (method === 'compile') {
+    return plate.compile(map)(data);
+  }
 };
 
-common.createTest = function(name) {
+common.createTest = function(name, map) {
   return {
     topic: function() {
       this.out = get(name, 'out');
       this.data = JSON.parse(get(name, 'json') || "{}");
 
-      return common.render(name, this.data);
+      return {
+        render: common.render(name, this.data, map, 'bind'),
+        compile: common.render(name, this.data, map, 'compile')
+      };
     },
-    'should merge data to markup': function(html) {
-      assert.equal(html, this.out);
+    'should merge data to markup': function(result) {
+      assert.equal(result.render, this.out);
+      assert.equal(result.compile, this.out);
     }
   };
 };

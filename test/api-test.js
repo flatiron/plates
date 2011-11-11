@@ -4,6 +4,7 @@ var vows = require('vows'),
 
 vows.describe('merge data into markup').addBatch({
   'when creating a new constructor and providing both data and markup': {
-    'for simple template': common.createTest('simple')
+    'for simple template': common.createTest('simple'),
+    'for one level template': common.createTest('one-level')
   }
 }).export(module);
