@@ -1,9 +1,13 @@
 {
   "name": "plates",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Unobtrusive templating for the flatiron framework",
   "keywords": ["templates", "templating", "unobtrusive"],
   "author" : "hij1nx <hij1nx@gmail.com> http://twitter.com/hij1nx",
+  "maintainers": [ 
+    { "name": "Paolo Fragomeni", "email": "hij1nx@nodejitsu.com" },
+    { "name": "Maciej Małecki", "email": "maciej.malecki@notimplemented.org" }
+  ],
   "licenses": [{"type": "MIT"}],
   "repositories": [{
       "type": "git",
