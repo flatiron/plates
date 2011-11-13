@@ -18,5 +18,5 @@
     "test": "vows --spec test/*test.js"
   },
   "engines": ["node"],
-  "main" : "./lib/index.js"
+  "main" : "./lib/plates.js"
 }
