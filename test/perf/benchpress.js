@@ -8,24 +8,25 @@ suite
 
   .add('mustache', function() {
 
-	var view = { "foo": "Hello, World" };
-	var template = '<div id="foo">{{foo}}</div><div class="foo">';
+  	var view = { "foo": "Hello, World" };
+  	var template = '<div id="foo">{{foo}}</div><div class="foo">';
 
-	Mustache.to_html(template, view);
+  	Mustache.to_html(template, view);
 
   })
   .add('plates', function() {
 
+    var view = { "foo": "Hello, World" };
   	var template = '<div id="foo"></div><div class="foo">';
-  	var view = { "foo": "Hello, World" }
 
-  	new Plates(template, view).bind();
+  	Plates.bind(template, view);
 
   })
 
   .on('cycle', function(event, bench) {
     console.log(String(bench));
   })
+
   .on('complete', function() {
     console.log('Fastest is ' + this.filter('fastest').pluck('name'));
   })
