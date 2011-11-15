@@ -25,12 +25,13 @@ Create an instance of the constructor, provide it html and data. Do something in
 ```js
 
   var Plate = require('plates');
-  var plate = new Plate;
 
   var html = '<div id="test">Old Value</div>';
   var data = { "test": "New Value" };
 
-  var output = plate(html, data).bind(); 
+  var plate = new Plate(html, data);
+
+  var output = plate.bind(); 
 
   //
   // with the output, you could serve it up or process it further with JSDOM
@@ -56,12 +57,10 @@ Create an instance of the constructor, provide it html and data. Append the new 
 
   <script type="text/javascript">
   
-    var plate = new Plate;
-
     var html = '<div id="test">Old Value</div>';
     var data = { "test": "New Value" };
 
-    var output = plate(html, data).bind();
+    var output = new Plate(html, data).bind();
 
     //
     // with the output, append it to the current document or use it however you want.
@@ -84,8 +83,6 @@ Plates will try to match in the following order `data-bind`, which allows you to
 
 ```js
 
-  var plate = new Plate;
-
   var html = '<div id="test" class="sample example">Old Value</div>';
   var data = { "sample": "New Value" };
 
@@ -93,7 +90,7 @@ Plates will try to match in the following order `data-bind`, which allows you to
   // propertyMap establishes the preferred mapping of data-key to tag property.
   //
   var map = { "sample": "class" };
-  var output = plate(html, data).bind(map);
+  var output = new Plate(html, data).bind(map);
 
 ```
 
