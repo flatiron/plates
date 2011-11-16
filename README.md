@@ -24,12 +24,12 @@ Create an instance of the constructor, provide it html and data. Do something in
 
 ```js
 
-  var Plate = require('plates');
+  var Plates = require('plates');
 
   var html = '<div id="test">Old Value</div>';
   var data = { "test": "New Value" };
 
-  var plate = new Plate(html, data);
+  var plate = new Plates(html, data);
 
   var output = plate.bind(); 
 
@@ -60,7 +60,7 @@ Create an instance of the constructor, provide it html and data. Append the new 
     var html = '<div id="test">Old Value</div>';
     var data = { "test": "New Value" };
 
-    var output = new Plate(html, data).bind();
+    var output = new Plates(html, data).bind();
 
     //
     // with the output, append it to the current document or use it however you want.
