@@ -25,12 +25,12 @@ Take some markup, some data, bind them, done.
 
 ```js
 
-  var Plate = require('plates');
+  var Plates = require('plates');
 
   var html = '<div id="test">Old Value</div>';
   var data = { "test": "New Value" };
 
-  var output = Plate.bind(html, data); 
+  var output = Plates.bind(html, data); 
 
   //
   // with the output, you could serve it up or process it further with JSDOM
@@ -59,7 +59,7 @@ Take some markup, some data, bind them, done.
     var html = '<div id="test">Old Value</div>';
     var data = { "test": "New Value" };
 
-    var output = Plate.bind(html, data);
+    var output = Plates.bind(html, data);
 
     //
     // with the output, append it to the current document or use it however you want.
@@ -89,7 +89,7 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
   // A property map establishes the preferred mapping of data-key to tag property.
   //
   var map = { "sample": "class" };
-  var output = plate(html, data, map);
+  var output = Plates.bind(html, data, map);
 
 ```
 
