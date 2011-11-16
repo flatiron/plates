@@ -82,8 +82,6 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 
 ```js
 
-  var plate = new Plate;
-
   var html = '<div id="test" class="sample example">Old Value</div>';
   var data = { "sample": "New Value" };
 
