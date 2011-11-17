@@ -5,6 +5,7 @@ Plates (short for templates) binds data to markup. There's NO special syntax. It
 
 ## Motivation
 
+- 2x faster than Mustache.
 - No NON-HTML in your HTML such as <%=foo%> or {{foo}}.
 - Promote portable code/markup by decoupling decision making from presentation.
 - Make both the code and markup more readable and maintainable.
@@ -20,7 +21,7 @@ Install the library using npm or add it to your `package.json` file as a dependa
   $npm install plates
 ```
 
-Create an instance of the constructor, provide it html and data. Do something interesting with the new markup.
+Take some markup, some data, bind them, done.
 
 ```js
 
@@ -29,9 +30,7 @@ Create an instance of the constructor, provide it html and data. Do something in
   var html = '<div id="test">Old Value</div>';
   var data = { "test": "New Value" };
 
-  var plate = new Plates(html, data);
-
-  var output = plate.bind(); 
+  var output = Plates.bind(html, data); 
 
   //
   // with the output, you could serve it up or process it further with JSDOM
@@ -51,16 +50,16 @@ Include the script somehow wherever you are going to use it.
   <script type="text/javascript" src="plates.js"></script>
 ```
 
-Create an instance of the constructor, provide it html and data. Append the new markup to the document.
+Take some markup, some data, bind them, done.
 
 ```html
 
   <script type="text/javascript">
-  
+
     var html = '<div id="test">Old Value</div>';
     var data = { "test": "New Value" };
 
-    var output = new Plates(html, data).bind();
+    var output = Plates.bind(html, data);
 
     //
     // with the output, append it to the current document or use it however you want.
@@ -77,7 +76,7 @@ Create an instance of the constructor, provide it html and data. Append the new 
 
 ### Defining explicit instructions for matching data keys with html tags.
 
-Plates will try to match in the following order `data-bind`, which allows you to make an explicit corollation between a data key and an element. If there is no `data-bind` attribute in the tag, Plates will attempt to match the data key to the `id` of the element. If there is no match on the `id` or the `name` attributes of the element then the class attribute will be parsed by splitting its value by whitespace.
+Plates will attempt to match the data key to the `id` of the element. If you want to be specific about the relationship between
 
 #### An example of matching a data key to a class
 
@@ -87,14 +86,36 @@ Plates will try to match in the following order `data-bind`, which allows you to
   var data = { "sample": "New Value" };
 
   //
-  // propertyMap establishes the preferred mapping of data-key to tag property.
+  // A property map establishes the preferred mapping of data-key to tag property.
   //
-  var map = { "sample": "class" };
-  var output = new Plate(html, data).bind(map);
+  var options = { "sample": "class" };
+  var output = Plates.bind(html, data, options);
 
 ```
 
+#### An example of putting the new value into the attribute rather than the tag body.
+
+```js
+
+  var html = '<span></span><img id="bar" class="foo bazz" src=""/>';
+  var data = { "bazz": "Hello, World" };
+
+  var options = { "bazz": ["class", "src"] };
+
+  var output = Plates.bind(html, data, options);
+
+```
+
+The options object contains a mapping of option-key to data-key. In the above example, the option-key has an array value. The array can contain two values, the attribute name (1) and optionally the attribute to populate with the new value.
+
 ## License
 
+(The MIT License)
 
+Copyright (c) 2011 Nodejitsu Inc. http://www.twitter.com/nodejitsu
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. FUCK YEAH.
