@@ -88,10 +88,25 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
   //
   // A property map establishes the preferred mapping of data-key to tag property.
   //
-  var map = { "sample": "class" };
-  var output = Plates.bind(html, data, map);
+  var options = { "sample": "class" };
+  var output = Plates.bind(html, data, options);
 
 ```
+
+#### An example of putting the new value into the attribute rather than the tag body.
+
+```js
+
+  var html = '<span></span><img id="bar" class="foo bazz" src=""/>';
+  var data = { "bazz": "Hello, World" };
+
+  var options = { "bazz": ["class", "src"] };
+
+  var output = Plates.bind(html, data, options);
+
+```
+
+The options object contains a mapping of option-key to data-key. In the above example, the option-key has an array value. The array can contain two values, the attribute name (1) and optionally the attribute to populate with the new value.
 
 ## License
 
