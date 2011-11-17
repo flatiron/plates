@@ -106,7 +106,7 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 
 ```
 
-The options object contains a mapping of option-key to data-key. In the above example, the option-key has an array value. The array can contain two values, the attribute name (1) and optionally the attribute to populate with the new value.
+The options object contains a mapping of option-key to data-key. In the above example, the option-key has an array value. The array can contain two values, the attribute name (1) and optionally the attribute name (2) to populate with the new value.
 
 ## License
 
