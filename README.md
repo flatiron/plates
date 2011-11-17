@@ -98,7 +98,7 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 ```js
 
   var html = '<span></span><img id="bar" class="foo bazz" src=""/>';
-  var data = { "bazz": "Hello, World" };
+  var data = { "bazz": "http://images.google.com/logo" };
 
   var options = { "bazz": ["class", "src"] };
 
