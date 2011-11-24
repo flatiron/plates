@@ -1,3 +1,4 @@
+# Plates [![Build Status](https://secure.travis-ci.org/flatiron/plates.png)](http://travis-ci.org/flatiron/plates)
 
 ## Synopsys
 
