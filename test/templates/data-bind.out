@@ -1,1 +1,2 @@
-<div data-bind=name>frank</div>
+<input type="text" data-bind="name" data-bind-placeholder="placeholder" 
+   value="Frank" placeholder="Some dude"></input>
