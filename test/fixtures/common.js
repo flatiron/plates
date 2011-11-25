@@ -18,14 +18,15 @@ common.render = function(name, data, map) {
   return Plates.bind(html, data, map);
 };
 
-common.createTest = function(name, map) {
+common.createTest = function(name) {
   return {
     topic: function() {
       this.out = get(name, 'out');
       this.data = JSON.parse(get(name, 'json') || "{}");
+      this.map = JSON.parse(get(name, 'map') || null);
 
       return {
-        render: common.render(name, this.data, map),
+        render: common.render(name, this.data, this.map),
       };
     },
     'should merge data to markup': function(result) {
