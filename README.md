@@ -50,28 +50,37 @@ Include the script somehow wherever you are going to use it.
   <script type="text/javascript" src="plates.js"></script>
 ```
 
-Take some markup, some data, bind them, done.
+Here's a contrived example using jQuery.
 
 ```html
 
-  <script type="text/javascript">
+<html>
+  <head>
+    <script type="text/javascript">
 
-    var html = '<div id="test">Old Value</div>';
-    var data = { "test": "New Value" };
+      var html = $('#template1')[0];
+      var data = { "template1": "New Value" };
 
-    var output = Plates.bind(html, data);
+      var output = Plates.bind(html, data);
 
-    //
-    // with the output, append it to the current document or use it however you want.
-    //
-    ...
-    document.body.appendAdjacentHTML(output); // append this to the DOM using native DOM APIs.
-    ...
-    $('body').appendChild(output);
-    ...
+      $('#template1').html(output);
+      $('#ui')
 
-  </script>
-  
+    </script>
+    <style>
+      .templates { display: none; }
+    </style>
+  <body>
+
+    <div class="templates">
+      <div id="template1">Old Value</div>
+    </div>
+
+    <div class="ui">
+    </div>
+  </body>
+</html>
+
 ```
 
 ### Defining explicit instructions for matching data keys with html tags.
