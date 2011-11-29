@@ -1,7 +1,7 @@
 var common = exports,
     assert = require('assert'),
     fs = require('fs'),
-    Plate = require('../../lib/plates');
+    Plates = require('../../lib/plates');
 
 function get(name, extension) {
   try {
@@ -12,17 +12,10 @@ function get(name, extension) {
   }
 };
 
-common.render = function(name, data, map, method) {
-  var plate = new Plate(),
-      html = get(name, 'html');
+common.render = function(name, data, map) {
+  var html = get(name, 'html');
 
-  plate.html(html).data(data);
-
-  if (method === 'bind') {
-    return plate.bind(map);
-  } else if (method === 'compile') {
-    return plate.compile(map)(data);
-  }
+  return Plates.bind(html, data, map);
 };
 
 common.createTest = function(name, map) {
@@ -32,13 +25,11 @@ common.createTest = function(name, map) {
       this.data = JSON.parse(get(name, 'json') || "{}");
 
       return {
-        render: common.render(name, this.data, map, 'bind'),
-        compile: common.render(name, this.data, map, 'compile')
+        render: common.render(name, this.data, map),
       };
     },
     'should merge data to markup': function(result) {
       assert.equal(result.render, this.out);
-      assert.equal(result.compile, this.out);
     }
   };
 };
