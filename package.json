@@ -14,7 +14,7 @@
       "url": "git://github.com/flatiron/plates.git" 
   }],
   "devDependencies" : {
-    "vows" : "0.5.x",
+    "vows" : "0.6.x",
     "mustache" : "0.3.x",
     "benchmark" : "0.2.x"
   },
