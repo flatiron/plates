@@ -7,6 +7,7 @@ vows.describe('merge data into markup').addBatch({
     'for simple template': common.createTest('simple'),
     'for one level template': common.createTest('one-level'),
     'for a data-bound template': common.createTest('data-bind', { "name": "data-bind" }),
-    'for an overridden destination': common.createTest('attribute', { "url": ["data-bind", "src"]})
+    'for a different target attribute': common.createTest('attribute', { "url": ["data-bind", "src"]}),
+    'for an different target attribute with extra values': common.createTest('extra-attribute', { "url": ["class", "src"]})
  }
 }).export(module);
