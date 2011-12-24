@@ -6,7 +6,6 @@ Plates (short for templates) binds data to markup. There's NO special syntax. It
 
 ## Motivation
 
-- 2x faster than Mustache.
 - No NON-HTML in your HTML such as <%=foo%> or {{foo}}.
 - Promote portable code/markup by decoupling decision making from presentation.
 - Make both the code and markup more readable and maintainable.
@@ -92,14 +91,14 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 
 ```js
 
-  var html = '<div id="test" class="sample example">Old Value</div>';
-  var data = { "sample": "New Value" };
+  var html = '111<div id="outer">222<div id="inner">333</div><img class="test" src=""/>444</div>555';
 
-  //
-  // A property map establishes the preferred mapping of data-key to tag property.
-  //
-  var options = { "sample": "class" };
-  var output = Plates.bind(html, data, options);
+  var data = { "foo": "New Value" };
+  var map = Plates.Map();
+
+  map.where('class').is('test').use('foo');
+
+  console.log(Plates.bind(html, data, map));
 
 ```
 
@@ -107,12 +106,14 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 
 ```js
 
-  var html = '<span></span><img id="bar" class="foo bazz" src=""/>';
-  var data = { "bazz": "Hello, World" };
+  var html = '111<div id="outer">222<div id="inner">333</div><img class="test" src=""/>444</div>555';
 
-  var options = { "bazz": ["class", "src"] };
+  var data = { "foo": "New Value" };
+  var map = Plates.Map();
 
-  var output = Plates.bind(html, data, options);
+  map.where('class').is('test').use('foo').as('src');
+
+  console.log(Plates.bind(html, data, map));
 
 ```
 
