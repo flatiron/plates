@@ -2,7 +2,7 @@
 
 ## Synopsys
 
-Plates (short for templates) binds data to markup. There's NO special syntax. It works in the browser and in node.js! The right way to do this is with a DOM. Unfortunately, at the moment, the DOM is slow. On the server, it is quite slow. So Plates implements a very loose HTML parser.
+Plates (short for templates) binds data to markup. There's NO special syntax. It works in the browser and in `Node.js`. The right way to do this is with a DOM. Unfortunately, at the moment, the DOM is slow. On the server, it is quite slow.
 
 ## Motivation
 
@@ -18,7 +18,7 @@ Plates (short for templates) binds data to markup. There's NO special syntax. It
 Install the library using npm or add it to your `package.json` file as a dependancy.
 
 ```bash
-  $npm install plates
+  npm install plates
 ```
 
 Take some markup, some data, bind them, done.
