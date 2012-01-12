@@ -52,7 +52,7 @@ Consider the case where you want to apply a values to each tag that has a class.
   var data = { "username": "John Smith" };
   var map = Plates.Map();
 
-  map.where('class').is('name').use('username');
+  map.class('name').to('username');
 
   console.log(Plates.bind(html, data, map));
 ```
@@ -102,6 +102,12 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
 
 ```
+  function Map#class(attribute)
+  @param attribute {String} an value that may be found in the class attribute of a tag
+
+```
+
+```
   function Map#is(value)
   @param value {String} the value of the attribute specified in the `where` clause.
 ```
@@ -109,6 +115,13 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
   function Map#use(key)
   @param key {String} a string that represents a key in the data object that was provided.
+```
+
+```
+  function Map#to(key)
+  @param key {String} a string that represents a key in the data object that was provided.
+
+  Same as `use` method.
 ```
 
 ```
