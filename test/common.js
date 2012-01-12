@@ -2,14 +2,14 @@
 var common = exports,
     assert = require('assert'),
     fs = require('fs'),
-    Plates = require('../../lib/plates');
+    Plates = require('../lib/plates');
 
 function get(name, extension) {
 
   try {
     return fs.readFileSync(
       __dirname + 
-      '/../templates/' + 
+      '/fixtures/' + 
       name + '.' + 
       extension
     ).toString();
