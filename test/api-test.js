@@ -6,56 +6,56 @@ var vows = require('vows'),
 vows.describe('merge data into markup').addBatch({
   'when providing both data and markup': {
     
-    // '(1) a single tag with an `id` that corresponds to a `data-key`.': (
+    '(1) a single tag with an `id` that corresponds to a `data-key`.': (
 
-    //   function() {
-    //     return common.createTest('test-1');
-    //   }()
+      function() {
+        return common.createTest('test-1');
+      }()
 
-    // ),
+    ),
     
-    // '(2) a deeply nested tag with an `id` that corresponds to a `data-key`.': (
+    '(2) a deeply nested tag with an `id` that corresponds to a `data-key`.': (
 
-    //   function() {
-    //     return common.createTest('test-2');
-    //   }()
+      function() {
+        return common.createTest('test-2');
+      }()
 
-    // ),
+    ),
 
-    // '(3) a tag with an `id` that corresponds to a `data-key`, having a body of nested tags.': (
+    '(3) a tag with an `id` that corresponds to a `data-key`, having a body of nested tags.': (
 
-    //   function() {
-    //     return common.createTest('test-3');
-    //   }()
+      function() {
+        return common.createTest('test-3');
+      }()
 
-    // ),
+    ),
 
-    // '(4) a tag with an arbitrary attribute that corresponds to a `data-key`.': (
+    '(4) a tag with an arbitrary attribute that corresponds to a `data-key`.': (
 
-    //   function() {
+      function() {
       
-    //     var map = new Plates.Map();
-    //     map.where('src').is('google.com').use('key1');
-    //     map.where('src').is('yahoo.com').use('key2');
+        var map = new Plates.Map();
+        map.where('src').is('google.com').use('key1');
+        map.where('src').is('yahoo.com').use('key2');
 
-    //     return common.createTest('test-4', map);
+        return common.createTest('test-4', map);
 
-    //   }()
+      }()
 
-    // ),
+    ),
     
-    // '(5) a tag with a class attribute whith a value that corresponds to a `data-key`.': (
+    '(5) a tag with a class attribute whith a value that corresponds to a `data-key`.': (
 
-    //   function() {
+      function() {
         
-    //     var map = new Plates.Map();
-    //     map.where('class').is('hidden').use('key1');
+        var map = new Plates.Map();
+        map.where('class').is('hidden').use('key1');
 
-    //     return common.createTest('test-5', map);      
+        return common.createTest('test-5', map);      
 
-    //   }()
+      }()
 
-    // ),
+    ),
 
     
     '(6) a tag with a class attribute whith a value that corresponds to a `data-key`.': (
