@@ -2,11 +2,10 @@
 
 ## Synopsys
 
-Plates (short for templates) binds data to markup. There's NO special syntax. It works in the browser and in node.js! The right way to do this is with a DOM. Unfortunately, at the moment, the DOM is slow. On the server, it is quite slow. So Plates implements a very loose HTML parser.
+Plates (short for templates) binds data to markup. There's NO special syntax. It works in the browser and in `Node.js`. The right way to do this is with a DOM. Unfortunately, at the moment, the DOM is slow. On the server, it is quite slow.
 
 ## Motivation
 
-- 2x faster than Mustache.
 - No NON-HTML in your HTML such as <%=foo%> or {{foo}}.
 - Promote portable code/markup by decoupling decision making from presentation.
 - Make both the code and markup more readable and maintainable.
@@ -19,7 +18,7 @@ Plates (short for templates) binds data to markup. There's NO special syntax. It
 Install the library using npm or add it to your `package.json` file as a dependancy.
 
 ```bash
-  $npm install plates
+  npm install plates
 ```
 
 Take some markup, some data, bind them, done.
@@ -51,28 +50,37 @@ Include the script somehow wherever you are going to use it.
   <script type="text/javascript" src="plates.js"></script>
 ```
 
-Take some markup, some data, bind them, done.
+Here's a contrived example using jQuery.
 
 ```html
 
-  <script type="text/javascript">
+<html>
+  <head>
+    <script type="text/javascript">
 
-    var html = '<div id="test">Old Value</div>';
-    var data = { "test": "New Value" };
+      var html = $('#template1')[0];
+      var data = { "template1": "New Value" };
 
-    var output = Plates.bind(html, data);
+      var output = Plates.bind(html, data);
 
-    //
-    // with the output, append it to the current document or use it however you want.
-    //
-    ...
-    document.body.appendAdjacentHTML(output); // append this to the DOM using native DOM APIs.
-    ...
-    $('body').appendChild(output);
-    ...
+      $('#template1').html(output);
+      $('#ui')
 
-  </script>
-  
+    </script>
+    <style>
+      .templates { display: none; }
+    </style>
+  <body>
+
+    <div class="templates">
+      <div id="template1">Old Value</div>
+    </div>
+
+    <div class="ui">
+    </div>
+  </body>
+</html>
+
 ```
 
 ### Defining explicit instructions for matching data keys with html tags.
@@ -83,14 +91,14 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 
 ```js
 
-  var html = '<div id="test" class="sample example">Old Value</div>';
-  var data = { "sample": "New Value" };
+  var html = '111<div id="outer">222<div id="inner">333</div><img class="test" src=""/>444</div>555';
 
-  //
-  // A property map establishes the preferred mapping of data-key to tag property.
-  //
-  var options = { "sample": "class" };
-  var output = Plates.bind(html, data, options);
+  var data = { "foo": "New Value" };
+  var map = Plates.Map();
+
+  map.where('class').is('test').use('foo');
+
+  console.log(Plates.bind(html, data, map));
 
 ```
 
@@ -98,12 +106,14 @@ Plates will attempt to match the data key to the `id` of the element. If you wan
 
 ```js
 
-  var html = '<span></span><img id="bar" class="foo bazz" src=""/>';
-  var data = { "bazz": "Hello, World" };
+  var html = '111<div id="outer">222<div id="inner">333</div><img class="test" src=""/>444</div>555';
 
-  var options = { "bazz": ["class", "src"] };
+  var data = { "foo": "New Value" };
+  var map = Plates.Map();
 
-  var output = Plates.bind(html, data, options);
+  map.where('class').is('test').use('foo').as('src');
+
+  console.log(Plates.bind(html, data, map));
 
 ```
 

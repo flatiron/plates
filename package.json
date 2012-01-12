@@ -19,7 +19,7 @@
     "benchmark" : "0.2.x"
   },
   "scripts": {
-    "test": "vows --spec test/*test.js"
+    "test": "vows --spec test/api-test.js"
   },
   "engines": ["node"],
   "main" : "./lib/plates.js"

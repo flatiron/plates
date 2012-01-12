@@ -2,7 +2,7 @@ var Benchmark = require('benchmark');
 var suite = new Benchmark.Suite();
 
 var Mustache = require('mustache');
-var Plates = require('../../lib/plates');
+var Plates = require('../lib/plates');
 
 suite
 
