@@ -1,15 +1,13 @@
 
-![](http://flatironjs.org/img/flatiron.png)
+<img src="https://github.com/flatiron/plates/raw/master/plates.png" />
 
 # Plates 
 The anti-templating tool for every javascript environment.
 
 ## Synopsys
-
 Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in `Node.js`.
 
 ## Motivation
-
 - DOM templating is SLOW.
 - DSLs (Domain Specific Languages) such as <%=foo%> or {{foo}} reduce portability.
 - Promote the separation of concerns principle by decoupling decision making from presentation.
@@ -20,7 +18,6 @@ Plates (short for templates) binds data to markup. Plates has NO special syntax.
 [![Build Status](https://secure.travis-ci.org/flatiron/plates.png)](http://travis-ci.org/flatiron/plates)
 
 ## Features
-
 - Automatically bind data to a tag's body by matching unique tag IDs to data keys.
 - Bind data to a tag's body based on any attribute's values.
 - Bind data to a tag's attribute based on any attribute's values.
