@@ -1,33 +1,32 @@
 
 <img src="https://github.com/flatiron/plates/raw/master/plates.png" />
 
-# Plates 
 The anti-templating tool for every javascript environment.
 
-## Synopsys
+# Synopsys
 Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in `Node.js`.
 
-## Motivation
+# Motivation
 - DOM templating is SLOW.
 - DSLs (Domain Specific Languages) such as <%=foo%> or {{foo}} reduce portability.
 - Promote the separation of concerns principle by decoupling decision making from presentation.
 - Make both the code and markup more readable and maintainable by a wider audience.
 
-## Status
+# Status
 
 [![Build Status](https://secure.travis-ci.org/flatiron/plates.png)](http://travis-ci.org/flatiron/plates)
 
-## Features
+# Features
 - Automatically bind data to a tag's body by matching unique tag IDs to data keys.
 - Bind data to a tag's body based on any attribute's values.
 - Bind data to a tag's attribute based on any attribute's values.
 
 - TODO: Specify option to create attribute if it does not exist.
 
-## Installation
+# Installation
 There are a few ways to use `plates`. Install the library using npm. You can add it to your `package.json` file as a dependancy, or include the script in your HTML page.
 
-## Usage
+# Usage
 
 ```js
   var Plates = require('plates');
@@ -38,7 +37,7 @@ There are a few ways to use `plates`. Install the library using npm. You can add
   var output = Plates.bind(html, data); 
 ```
 
-### Matching a data key to a class
+## Matching a data key to a class
 Consider the case where you want to apply a values to each tag that has a class.
 
 ```js
@@ -52,7 +51,7 @@ Consider the case where you want to apply a values to each tag that has a class.
   console.log(Plates.bind(html, data, map));
 ```
 
-### Matching a data key to a class and inserting the new value into an attribute
+## Matching a data key to a class and inserting the new value into an attribute
 
 ```js
   var html = '<a href="/"></a>';
@@ -65,9 +64,9 @@ Consider the case where you want to apply a values to each tag that has a class.
   console.log(Plates.bind(html, data, map));
 ```
 
-## API
+# API
 
-### Static Methods
+## Static Methods
 
 ```
   function Plates.bind(html, data, map)
@@ -78,7 +77,7 @@ Consider the case where you want to apply a values to each tag that has a class.
   @return {String} the result of merging the data and html.
 ```
 
-### Constructors
+## Constructors
 
 ```
   function Plates.Map(options)
@@ -88,9 +87,9 @@ Consider the case where you want to apply a values to each tag that has a class.
   @return {Object} an object that represents a reusable map, has mapping methods.
 ```
 
-### Member Methods
+## Member Methods
 
-**where()**
+### where()
 
 ```
   function Map#where(attribute)
@@ -100,14 +99,14 @@ Consider the case where you want to apply a values to each tag that has a class.
   other member methods may be chained to eachother in any order.
 ```
 
-**class()**
+### class()
 
 ```
   function Map#class(attribute)
   @param attribute {String} an value that may be found in the class attribute of a tag
 ```
 
-**insert()**
+### insert()
 
 ```
   function Map#insert(attribute)
@@ -115,21 +114,21 @@ Consider the case where you want to apply a values to each tag that has a class.
   the attribute that was specified in the `where` clause.
 ```
 
-**is()**
+### is()
 
 ```
   function Map#is(value)
   @param value {String} the value of the attribute specified in the `where` clause.
 ```
 
-**use()**
+### use()
 
 ```
   function Map#use(key)
   @param key {String} a string that represents a key in the data object that was provided.
 ```
 
-**to()**
+### to()
 
 ```
   function Map#to(key)
@@ -138,7 +137,7 @@ Consider the case where you want to apply a values to each tag that has a class.
   Same as `use` method.
 ```
 
-**as()**
+### as()
 
 ```
   function Map#as(attribute)
@@ -148,7 +147,7 @@ Consider the case where you want to apply a values to each tag that has a class.
   that were passed to the Map constructor.
 ```
 
-## License
+# License
 
 (The MIT License)
 
