@@ -1,14 +1,12 @@
 
 <img src="https://github.com/flatiron/plates/raw/master/plates.png" />
 
-The anti-templating tool for every javascript environment.
-
 # Synopsys
 Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in `Node.js`.
 
 # Motivation
-- DOM templating is SLOW.
 - DSLs (Domain Specific Languages) such as <%=foo%> or {{foo}} reduce portability.
+- DOM templating is SLOW.
 - Promote the separation of concerns principle by decoupling decision making from presentation.
 - Make both the code and markup more readable and maintainable by a wider audience.
 
@@ -29,39 +27,39 @@ There are a few ways to use `plates`. Install the library using npm. You can add
 # Usage
 
 ```js
-  var Plates = require('plates');
+var Plates = require('plates');
 
-  var html = '<div id="test">Old Value</div>';
-  var data = { "test": "New Value" };
+var html = '<div id="test">Old Value</div>';
+var data = { "test": "New Value" };
 
-  var output = Plates.bind(html, data); 
+var output = Plates.bind(html, data); 
 ```
 
 ## Matching a data key to a class
 Consider the case where you want to apply a values to each tag that has a class.
 
 ```js
-  var html = '<span class="name">User</span>...<span class="name">User</span>';
+var html = '<span class="name">User</span>...<span class="name">User</span>';
 
-  var data = { "username": "John Smith" };
-  var map = Plates.Map();
+var data = { "username": "John Smith" };
+var map = Plates.Map();
 
-  map.class('name').to('username');
+map.class('name').to('username');
 
-  console.log(Plates.bind(html, data, map));
+console.log(Plates.bind(html, data, map));
 ```
 
 ## Matching a data key to a class and inserting the new value into an attribute
 
 ```js
-  var html = '<a href="/"></a>';
+var html = '<a href="/"></a>';
 
-  var data = { "newurl": "http://www.nodejitsu.com" };
-  var map = Plates.Map();
+var data = { "newurl": "http://www.nodejitsu.com" };
+var map = Plates.Map();
 
-  map.where('href').is('/').use('newurl').as('href');
+map.where('href').is('/').use('newurl').as('href');
 
-  console.log(Plates.bind(html, data, map));
+console.log(Plates.bind(html, data, map));
 ```
 
 # API
@@ -69,22 +67,22 @@ Consider the case where you want to apply a values to each tag that has a class.
 ## Static Methods
 
 ```
-  function Plates.bind(html, data, map)
-  @param html {String} A string of well formed HTML.
-  @param data {Object} A JSON object.
-  @param map {Object} an instance of `Plates.Map()`.
+function Plates.bind(html, data, map)
+@param html {String} A string of well formed HTML.
+@param data {Object} A JSON object.
+@param map {Object} an instance of `Plates.Map()`.
 
-  @return {String} the result of merging the data and html.
+@return {String} the result of merging the data and html.
 ```
 
 ## Constructors
 
 ```
-  function Plates.Map(options)
-  @options {Object} an object literal that contains configuration options.
-    - @option where {String} the default attribute to match on instead of ID.
-    - @option as {String} the default attribute to replace into.
-  @return {Object} an object that represents a reusable map, has mapping methods.
+function Plates.Map(options)
+@options {Object} an object literal that contains configuration options.
+  - @option where {String} the default attribute to match on instead of ID.
+  - @option as {String} the default attribute to replace into.
+@return {Object} an object that represents a reusable map, has mapping methods.
 ```
 
 ## Member Methods
@@ -92,59 +90,59 @@ Consider the case where you want to apply a values to each tag that has a class.
 ### where()
 
 ```
-  function Map#where(attribute)
-  @param attribute {String} an attribute that may be found in a tag
+function Map#where(attribute)
+@param attribute {String} an attribute that may be found in a tag
 
-  This method will initiate a `clause`. Once a clause has been established,
-  other member methods may be chained to eachother in any order.
+This method will initiate a `clause`. Once a clause has been established,
+other member methods may be chained to eachother in any order.
 ```
 
 ### class()
 
 ```
-  function Map#class(attribute)
-  @param attribute {String} an value that may be found in the class attribute of a tag
+function Map#class(attribute)
+@param attribute {String} an value that may be found in the class attribute of a tag
 ```
 
 ### insert()
 
 ```
-  function Map#insert(attribute)
-  @param attribute {String} a string that represents a data-key, data will be inserted into 
-  the attribute that was specified in the `where` clause.
+function Map#insert(attribute)
+@param attribute {String} a string that represents a data-key, data will be inserted into 
+the attribute that was specified in the `where` clause.
 ```
 
 ### is()
 
 ```
-  function Map#is(value)
-  @param value {String} the value of the attribute specified in the `where` clause.
+function Map#is(value)
+@param value {String} the value of the attribute specified in the `where` clause.
 ```
 
 ### use()
 
 ```
-  function Map#use(key)
-  @param key {String} a string that represents a key in the data object that was provided.
+function Map#use(key)
+@param key {String} a string that represents a key in the data object that was provided.
 ```
 
 ### to()
 
 ```
-  function Map#to(key)
-  @param key {String} a string that represents a key in the data object that was provided.
+function Map#to(key)
+@param key {String} a string that represents a key in the data object that was provided.
 
-  Same as `use` method.
+Same as `use` method.
 ```
 
 ### as()
 
 ```
-  function Map#as(attribute)
-  @param attribute {String} a string that represents an attribute in the tag.
+function Map#as(attribute)
+@param attribute {String} a string that represents an attribute in the tag.
 
-  If there is no attribute by that name found, one may be created depending on the options
-  that were passed to the Map constructor.
+If there is no attribute by that name found, one may be created depending on the options
+that were passed to the Map constructor.
 ```
 
 # License
