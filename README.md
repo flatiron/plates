@@ -33,14 +33,12 @@ There are a few ways to use `plates`. Install the library using npm. You can add
 ## Usage
 
 ```js
-
   var Plates = require('plates');
 
   var html = '<div id="test">Old Value</div>';
   var data = { "test": "New Value" };
 
   var output = Plates.bind(html, data); 
-
 ```
 
 ### Matching a data key to a class
@@ -88,6 +86,9 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
   function Plates.Map(options)
   @options {Object} an object literal that contains configuration options.
+    - @option where {String} the default attribute to match on instead of ID.
+    - @option as {String} the default attribute to replace into.
+    - @option val {String}
   @return {Object} an object that represents a reusable map, has mapping methods.
 ```
 
@@ -104,7 +105,12 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
   function Map#class(attribute)
   @param attribute {String} an value that may be found in the class attribute of a tag
+```
 
+```
+  function Map#insert(attribute)
+  @param attribute {String} a string that represents a data-key, data will be inserted into 
+  the attribute that was specified in the `where` clause.
 ```
 
 ```
