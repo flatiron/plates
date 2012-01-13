@@ -88,12 +88,12 @@ Consider the case where you want to apply a values to each tag that has a class.
   @options {Object} an object literal that contains configuration options.
     - @option where {String} the default attribute to match on instead of ID.
     - @option as {String} the default attribute to replace into.
-    - @option val {String}
   @return {Object} an object that represents a reusable map, has mapping methods.
 ```
 
 ### Member Methods
 
+**where()**
 ```
   function Map#where(attribute)
   @param attribute {String} an attribute that may be found in a tag
@@ -102,27 +102,32 @@ Consider the case where you want to apply a values to each tag that has a class.
   other member methods may be chained to eachother in any order.
 ```
 
+**class()**
 ```
   function Map#class(attribute)
   @param attribute {String} an value that may be found in the class attribute of a tag
 ```
 
+**insert()**
 ```
   function Map#insert(attribute)
   @param attribute {String} a string that represents a data-key, data will be inserted into 
   the attribute that was specified in the `where` clause.
 ```
 
+**is()**
 ```
   function Map#is(value)
   @param value {String} the value of the attribute specified in the `where` clause.
 ```
 
+**use()**
 ```
   function Map#use(key)
   @param key {String} a string that represents a key in the data object that was provided.
 ```
 
+**to()**
 ```
   function Map#to(key)
   @param key {String} a string that represents a key in the data object that was provided.
@@ -130,6 +135,7 @@ Consider the case where you want to apply a values to each tag that has a class.
   Same as `use` method.
 ```
 
+**as()**
 ```
   function Map#as(attribute)
   @param attribute {String} a string that represents an attribute in the tag.
