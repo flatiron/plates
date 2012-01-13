@@ -1,7 +1,7 @@
 
 <img src="https://github.com/flatiron/plates/raw/master/plates.png" />
 
-# Synopsys
+# Synopsis
 Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in `Node.js`.
 
 # Motivation
