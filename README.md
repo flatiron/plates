@@ -94,6 +94,7 @@ Consider the case where you want to apply a values to each tag that has a class.
 ### Member Methods
 
 **where()**
+
 ```
   function Map#where(attribute)
   @param attribute {String} an attribute that may be found in a tag
@@ -103,12 +104,14 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
 
 **class()**
+
 ```
   function Map#class(attribute)
   @param attribute {String} an value that may be found in the class attribute of a tag
 ```
 
 **insert()**
+
 ```
   function Map#insert(attribute)
   @param attribute {String} a string that represents a data-key, data will be inserted into 
@@ -116,18 +119,21 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
 
 **is()**
+
 ```
   function Map#is(value)
   @param value {String} the value of the attribute specified in the `where` clause.
 ```
 
 **use()**
+
 ```
   function Map#use(key)
   @param key {String} a string that represents a key in the data object that was provided.
 ```
 
 **to()**
+
 ```
   function Map#to(key)
   @param key {String} a string that represents a key in the data object that was provided.
@@ -136,6 +142,7 @@ Consider the case where you want to apply a values to each tag that has a class.
 ```
 
 **as()**
+
 ```
   function Map#as(attribute)
   @param attribute {String} a string that represents an attribute in the tag.
