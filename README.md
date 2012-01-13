@@ -81,7 +81,7 @@ console.log(Plates.bind(html, data, map));
 
 # API
 
-## Static Methods
+## Plates Static Methods
 
 ```
 function Plates.bind(html, data, map)
@@ -92,7 +92,7 @@ function Plates.bind(html, data, map)
 @return {String} the result of merging the data and html.
 ```
 
-## Constructors
+## Map Constructor
 
 ```
 function Plates.Map(options)
@@ -102,7 +102,7 @@ function Plates.Map(options)
 @return {Object} an object that represents a reusable map, has mapping methods.
 ```
 
-## Member Methods
+## Map Instance Methods
 
 ### where()
 
