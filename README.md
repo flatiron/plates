@@ -26,6 +26,9 @@ There are a few ways to use `plates`. Install the library using npm. You can add
 
 # Usage
 
+## Simple case
+By default, `plates` will try to match the `data-key` in the data to an `ID` in the tag, since both should are uniqe.
+
 ```js
 var Plates = require('plates');
 
@@ -35,8 +38,8 @@ var data = { "test": "New Value" };
 var output = Plates.bind(html, data); 
 ```
 
-## Matching a data key to a class
-Consider the case where you want to apply a values to each tag that has a class.
+## Explicit instructions
+A common use case is to apply the new value to each tag's body based on the class attribute.
 
 ```js
 var html = '<span class="name">User</span>...<span class="name">User</span>';
@@ -49,7 +52,8 @@ map.class('name').to('username');
 console.log(Plates.bind(html, data, map));
 ```
 
-## Matching a data key to a class and inserting the new value into an attribute
+## Complex instructions
+Another common case is to want to replace the value of an attribute if it is a match.
 
 ```js
 var html = '<a href="/"></a>';
@@ -57,7 +61,20 @@ var html = '<a href="/"></a>';
 var data = { "newurl": "http://www.nodejitsu.com" };
 var map = Plates.Map();
 
-map.where('href').is('/').use('newurl').as('href');
+map.where('href').is('/').insert('newurl');
+
+console.log(Plates.bind(html, data, map));
+```
+
+In even more complex cases, an arbitrary attribute an be specified, if a value is matched, a specific value can be used and then used as anther attribute's value.
+
+```js
+var html = '<a href="/"></a>';
+
+var data = { "imageurl": "http://www.nodejitsu.com" };
+var map = Plates.Map();
+
+map.where('data-foo').is('bar').use('imageurl').as('src');
 
 console.log(Plates.bind(html, data, map));
 ```
