@@ -98,6 +98,21 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-8', map);
 
       }()
+      
+    ),
+
+    '(9) differing on "is" parameter only.': (
+
+      function() {
+        
+        var map = Plates.Map();
+
+        map.where('name').is('method').use('method').as('value');
+        map.where('name').is('id').use('id').as('value');
+
+        return common.createTest('test-9', map);
+
+      }()
 
     )
   }
