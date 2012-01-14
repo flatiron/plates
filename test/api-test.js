@@ -114,6 +114,24 @@ vows.describe('merge data into markup').addBatch({
 
       }()
 
+    ),
+
+    '(10) a map that defines creating missing attributes.' : (
+
+      function() {
+        
+        var map = Plates.Map({
+          create: true
+        });
+
+        map.class('logo').use('url').as('src');
+        map.where('name').is('first_name').use('fname').as('value');
+        map.where('name').is('last_name').use('lname').as('value');
+
+        return common.createTest('test-10', map);
+
+      }()
+
     )
   }
 
