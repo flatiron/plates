@@ -99,6 +99,20 @@ vows.describe('merge data into markup').addBatch({
 
       }()
 
+    ),
+
+    '(9) iterate a collection.': (
+
+      function() {
+        
+        var map = Plates.Map();
+
+        map.where('href').is('/').insert('url');
+
+        return common.createTest('test-9', map);
+
+      }()
+
     )
   }
 
