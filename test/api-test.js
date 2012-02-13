@@ -98,6 +98,53 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-8', map);
 
       }()
+      
+    ),
+
+    '(9) iterate a collection.': (
+
+      function() {
+        
+        var map = Plates.Map();
+
+        map.where('href').is('/').insert('url');
+
+        return common.createTest('test-9', map);
+
+      }()
+
+    ),
+
+    '(10) a map that defines creating missing attributes.' : (
+
+      function() {
+        
+        var map = Plates.Map({
+          create: true
+        });
+
+        map.class('logo').use('url').as('src');
+        map.where('name').is('first_name').use('fname').as('value');
+        map.where('name').is('last_name').use('lname').as('value');
+
+        return common.createTest('test-10', map);
+
+      }()
+
+    ),
+
+   '(11) differing on "is" parameter only.': (
+
+      function() {
+        
+        var map = Plates.Map();
+
+        map.where('name').is('method').use('method').as('value');
+        map.where('name').is('id').use('id').as('value');
+
+        return common.createTest('test-11', map);
+
+      }()
 
     ),
 
