@@ -101,14 +101,13 @@ vows.describe('merge data into markup').addBatch({
       
     ),
 
-    '(9) differing on "is" parameter only.': (
+    '(9) iterate a collection.': (
 
       function() {
         
         var map = Plates.Map();
 
-        map.where('name').is('method').use('method').as('value');
-        map.where('name').is('id').use('id').as('value');
+        map.where('href').is('/').insert('url');
 
         return common.createTest('test-9', map);
 
@@ -129,6 +128,21 @@ vows.describe('merge data into markup').addBatch({
         map.where('name').is('last_name').use('lname').as('value');
 
         return common.createTest('test-10', map);
+
+      }()
+
+    ),
+
+   '(11) differing on "is" parameter only.': (
+
+      function() {
+        
+        var map = Plates.Map();
+
+        map.where('name').is('method').use('method').as('value');
+        map.where('name').is('id').use('id').as('value');
+
+        return common.createTest('test-11', map);
 
       }()
 

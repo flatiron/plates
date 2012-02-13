@@ -1,1 +1,3 @@
-<input type="hidden" name="method" value="DELETE" /><input type="hidden" name="id" value="7" />
+<a href="/a"></a>
+<a href="/b"></a>
+<a href="/c"></a>
