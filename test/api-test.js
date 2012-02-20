@@ -160,6 +160,16 @@ vows.describe('merge data into markup').addBatch({
 
       }()
 
+    ),
+
+    '(12) iterate a collection of nested elements.': (
+
+      function() {
+        
+        return common.createTest('test-12');
+
+      }()
+
     )
   }
 
