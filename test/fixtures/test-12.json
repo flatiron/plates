@@ -1,0 +1,14 @@
+{
+  "name": [
+    {
+      "first"  : "John",
+      "middle" : "C",
+      "last"   : "Smith"
+    },
+    {
+      "first"  : "Jane",
+      "middle" : "A",
+      "last"   : "Doe"
+    }
+  ]
+}
