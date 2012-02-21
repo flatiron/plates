@@ -165,9 +165,7 @@ vows.describe('merge data into markup').addBatch({
     '(12) iterate a collection of over an element with children.': (
 
       function() {
-        
-        return common.createTest('test-12');
-
+          return common.createTest('test-12');
       }()
 
     )
