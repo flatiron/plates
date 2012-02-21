@@ -1,7 +1,7 @@
 var vows = require('vows'),
-    assert = require('assert'),
-    Plates = require('../lib/plates');
-    common = require('./common');
+assert = require('assert'),
+Plates = require('../lib/plates');
+common = require('./common');
 
 vows.describe('merge data into markup').addBatch({
   'when providing both data and markup': {
@@ -33,7 +33,7 @@ vows.describe('merge data into markup').addBatch({
     '(4) a tag with an arbitrary attribute that corresponds to a `data-key`.': (
 
       function() {
-      
+        
         var map = Plates.Map();
 
         map.where('src').is('google.com').use('key1');
@@ -133,7 +133,7 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-   '(11) differing on "is" parameter only.': (
+    '(11) differing on "is" parameter only.': (
 
       function() {
         
@@ -162,22 +162,31 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    '(12) iterate a collection of over an element with children.': (
+    /*
+    '(12) iterate a collection of over a list with nested children.': (
 
       function() {
         return common.createTest('test-12');
       }()
 
     ),
-    
+    */
+
     '(13) iterate over a table': (
 
       function() {
         return common.createTest('test-13');
       }()
 
-    )
+    ),
+    
+    '(14) iterate a collection over a list with children': (
 
+      function() {
+        return common.createTest('test-14');
+      }()
+
+    )    
   }
 
 }).export(module);
