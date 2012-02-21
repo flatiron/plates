@@ -19,7 +19,6 @@ function get(name, extension) {
 };
 
 common.render = function(name, data, map) {
-
   var html = get(name, 'html');
   return Plates.bind(html, data, map);
 };
@@ -33,8 +32,7 @@ common.createTest = function(name, map) {
       this.data = JSON.parse(get(name, 'json') || "{}");
 
       return {
-
-        render: common.render(name, this.data, map),
+        render: common.render(name, this.data, map)
       };
     },
     'should merge data to markup': function(result) {
