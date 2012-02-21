@@ -162,7 +162,6 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    /*
     '(12) iterate a collection of over a list with nested children.': (
 
       function() {
@@ -170,7 +169,6 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
-    */
 
     '(13) iterate over a table': (
 
