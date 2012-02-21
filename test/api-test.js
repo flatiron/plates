@@ -184,6 +184,14 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-14');
       }()
 
+    ),
+    
+    '(15) additional markup stress test (asked for in issue #35)': (
+
+      function() {
+        return common.createTest('test-15');
+      }()
+
     )    
   }
 
