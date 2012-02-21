@@ -164,11 +164,20 @@ vows.describe('merge data into markup').addBatch({
 
     '(12) iterate a collection of over an element with children.': (
 
-        function() {
-          return common.createTest('test-12');
-        }()
+      function() {
+        return common.createTest('test-12');
+      }()
+
+    ),
+    
+    '(13) iterate over a table': (
+
+      function() {
+        return common.createTest('test-13');
+      }()
 
     )
+
   }
 
 }).export(module);
