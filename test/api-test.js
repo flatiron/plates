@@ -5,7 +5,7 @@ var vows = require('vows'),
 
 vows.describe('merge data into markup').addBatch({
   'when providing both data and markup': {
-    
+
     '(1) a single tag with an `id` that corresponds to a `data-key`.': (
 
       function() {
@@ -13,7 +13,7 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
-    
+
     '(2) a deeply nested tag with an `id` that corresponds to a `data-key`.': (
 
       function() {
@@ -33,7 +33,7 @@ vows.describe('merge data into markup').addBatch({
     '(4) a tag with an arbitrary attribute that corresponds to a `data-key`.': (
 
       function() {
-      
+
         var map = Plates.Map();
 
         map.where('src').is('google.com').use('key1');
@@ -44,30 +44,30 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
-    
+
     '(5) a tag with a class attribute whith a value that corresponds to a `data-key`.': (
 
       function() {
-        
+
         var map = Plates.Map();
         map.where('class').is('hidden').use('key1');
 
-        return common.createTest('test-5', map);      
+        return common.createTest('test-5', map);
 
       }()
 
     ),
 
-    
+
     '(6) a tag with a class attribute whith a value that corresponds to a `data-key`, a second map item.': (
 
       function() {
-        
+
         var map = Plates.Map();
         map.where('class').is('hidden').use('key1');
         map.where('href').is('/foo').use('key2').as('href');
 
-        return common.createTest('test-6', map);      
+        return common.createTest('test-6', map);
 
       }()
 
@@ -76,7 +76,7 @@ vows.describe('merge data into markup').addBatch({
     '(7) a map that redefines the default matching attribute of `id`.': (
 
       function() {
-        
+
         var map = Plates.Map({
           where: 'class'
         });
@@ -90,7 +90,7 @@ vows.describe('merge data into markup').addBatch({
     '(8) using the insert shortcut.': (
 
       function() {
-        
+
         var map = Plates.Map();
 
         map.where('href').is('/').insert('newurl');
@@ -98,13 +98,13 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-8', map);
 
       }()
-      
+
     ),
 
     '(9) iterate a collection.': (
 
       function() {
-        
+
         var map = Plates.Map();
 
         map.where('href').is('/').insert('url');
@@ -118,7 +118,7 @@ vows.describe('merge data into markup').addBatch({
     '(10) a map that defines creating missing attributes.' : (
 
       function() {
-        
+
         var map = Plates.Map({
           create: true
         });
@@ -136,7 +136,7 @@ vows.describe('merge data into markup').addBatch({
    '(11) differing on "is" parameter only.': (
 
       function() {
-        
+
         var map = Plates.Map();
 
         map.where('name').is('method').use('method').as('value');
@@ -151,7 +151,7 @@ vows.describe('merge data into markup').addBatch({
     '(9) iterate a collection.': (
 
       function() {
-        
+
         var map = Plates.Map();
 
         map.where('href').is('/').insert('url');
@@ -165,8 +165,22 @@ vows.describe('merge data into markup').addBatch({
     '(12) iterate a collection of over an element with children.': (
 
       function() {
-        
+
         return common.createTest('test-12');
+
+      }()
+
+    ),
+
+    '(13) attributes can contain valid characters': (
+
+      function() {
+
+        var map = Plates.Map();
+
+        map.where('href').is('aA1-_:/&#1235; ').insert('test');
+
+        return common.createTest('test-13', map);
 
       }()
 
