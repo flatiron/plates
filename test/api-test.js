@@ -226,6 +226,7 @@ vows.describe('merge data into markup').addBatch({
       function() {
         return common.createTest('test-17');
       }()
+
     )
   }
 
