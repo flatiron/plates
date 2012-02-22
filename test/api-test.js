@@ -199,13 +199,46 @@ vows.describe('merge data into markup').addBatch({
       function() {
 
         var map = Plates.Map();
-
-        map.where("href").is("post_show_link").insert(function(data) {
-            console.log(arguments);
-          return "/foobar";
-        });
+        
+        map
+          .where("href").is("post_show_link").insert(function(data) {
+            return "/foobar";
+          })
+          .class("categories").use("categories");
 
         return common.createTest('test-16', map);
+
+      }()
+
+    ),
+
+    '(17) It should be able to iterate over collections with maps': (
+
+      function() {
+
+        var map = Plates.Map();
+        
+        map.class("names").use("names");
+
+        return common.createTest('test-17', map);
+
+      }()
+
+    ),
+
+    '(18) It should be able to iterate over collections with multiple maps': (
+
+      function() {
+
+        var map = Plates.Map();
+
+        map.where("href").is("placeholder").insert(function(data) {
+            return "/foobar";
+          })
+        map.class("names").use("names");
+
+        return common.createTest('test-18', map);
+
       }()
 
     ) 
