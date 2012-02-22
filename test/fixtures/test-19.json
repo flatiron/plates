@@ -1,9 +1,9 @@
 {
-  'components': [
-    'Union',
-    'Director',
-    'Broadway',
-    'Plates',
-    'Resourceful'
+  "components": [
+    "Union",
+    "Director",
+    "Broadway",
+    "Plates",
+    "Resourceful"
   ]
 }
