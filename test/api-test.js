@@ -194,10 +194,18 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    '(16) additional markup stress test (asked for in issue #35)': (
+    '(16) It should be able to map functions': (
 
       function() {
-        return common.createTest('test-15');
+
+        var map = Plates.Map();
+
+        map.where("href").is("post_show_link").insert(function(data) {
+            console.log(arguments);
+          return "/foobar";
+        });
+
+        return common.createTest('test-16', map);
       }()
 
     ) 
