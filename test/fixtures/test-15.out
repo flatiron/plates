@@ -1,0 +1,12 @@
+<a href="/foobar">Link</a>
+<ul>
+  <li class="names">
+    <span class="first">John</span>
+    <span class="middle">C</span>
+    <span class="last">Smith</span>
+  </li><li class="names">
+    <span class="first">Jane</span>
+    <span class="middle">A</span>
+    <span class="last">Doe</span>
+  </li>
+</ul>
