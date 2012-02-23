@@ -22,7 +22,34 @@ suite
   	Plates.bind(template, view);
 
   })
+  .add('mustache iterations', function() {
 
+  	var view = { 
+      "stooges": [
+        "Moe",
+        "Larry",
+        "Curly"
+      ]
+    };
+  	var template = '{{#stooges}}<b>{{name}}</b>{{/stooges}}';
+
+  	Mustache.to_html(template, view);
+
+  })
+  .add('plates iterations', function() {
+
+    var view = { 
+      "stooges": [
+        "Moe",
+        "Larry",
+        "Curly"
+      ]
+    };
+  	var template = '<b class="stooges">Name</b>';
+
+  	Plates.bind(template, view);
+
+  })
   .on('cycle', function(event, bench) {
     console.log(String(bench));
   })
