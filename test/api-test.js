@@ -213,6 +213,13 @@ vows.describe('merge data into markup').addBatch({
 
       }()
     ),
+    
+    '(16) It should be able to iterate over simple arrays': (
+
+      function() {
+        return common.createTest('test-16');
+      }()
+    ),
   }
 
 }).export(module);
