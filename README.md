@@ -47,7 +47,7 @@ var html = '<span class="name">User</span>...<span class="name">User</span>';
 var data = { "username": "John Smith" };
 var map = Plates.Map();
 
-map.class('name').to('username');
+map.klass('name').to('username');
 
 console.log(Plates.bind(html, data, map));
 ```
@@ -114,10 +114,10 @@ This method will initiate a `clause`. Once a clause has been established,
 other member methods may be chained to eachother in any order.
 ```
 
-### class()
+### klass()
 
 ```
-function Map#class(attribute)
+function Map#klass(attribute)
 @param attribute {String} an value that may be found in the class attribute of a tag
 ```
 
