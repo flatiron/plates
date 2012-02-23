@@ -184,7 +184,21 @@ vows.describe('merge data into markup').addBatch({
 
       }()
 
-    )
+    ),
+
+    '(14) It should be able to iterate over collections with maps': (
+
+      function() {
+
+        var map = Plates.Map();
+        
+        map.class("names").use("names");
+
+        return common.createTest('test-14', map);
+
+      }()
+
+    ),
   }
 
 }).export(module);
