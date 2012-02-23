@@ -199,10 +199,6 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Adds test to ensure multiple mappings can be achieved and will not influence iterators.
 
     '(15) It should be able to iterate over collections with multiple maps': (
 
@@ -217,7 +213,6 @@ vows.describe('merge data into markup').addBatch({
 
       }()
     ),
-<<<<<<< HEAD
     
     '(16) It should be able to iterate over simple arrays': (
 
@@ -233,10 +228,7 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     )
-=======
->>>>>>> Adds the ability to properly map an iterative object, as tested in the newly added case 14.
-=======
->>>>>>> Adds test to ensure multiple mappings can be achieved and will not influence iterators.
+
   }
 
 }).export(module);
