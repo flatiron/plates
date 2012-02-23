@@ -199,6 +199,7 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
+<<<<<<< HEAD
 
     '(15) It should be able to iterate over collections with multiple maps': (
 
@@ -228,6 +229,8 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     )
+=======
+>>>>>>> Adds the ability to properly map an iterative object, as tested in the newly added case 14.
   }
 
 }).export(module);
