@@ -252,6 +252,13 @@ vows.describe('merge data into markup').addBatch({
       function() {
         return common.createTest('test-19');
       }()
+    ),
+
+    '(20) It should be able to iterate over deeply nested objects': (
+
+      function() {
+        return common.createTest('test-20');
+      }()
     )
 
     
