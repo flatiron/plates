@@ -184,6 +184,48 @@ vows.describe('merge data into markup').addBatch({
 
       }()
 
+    ),
+
+    '(14) It should be able to iterate over collections with maps': (
+
+      function() {
+
+        var map = Plates.Map();
+        
+        map.class("names").use("names");
+
+        return common.createTest('test-14', map);
+
+      }()
+
+    ),
+
+    '(15) It should be able to iterate over collections with multiple maps': (
+
+      function() {
+
+        var map = Plates.Map();
+
+        map.where("href").is("placeholder").insert("link");
+        map.class("names").use("names");
+
+        return common.createTest('test-15', map);
+
+      }()
+    ),
+    
+    '(16) It should be able to iterate over simple arrays': (
+
+      function() {
+        return common.createTest('test-16');
+      }()
+    ),
+
+    '(17) It should be able to iterate over deeply nested objects': (
+
+      function() {
+        return common.createTest('test-17');
+      }()
     )
   }
 
