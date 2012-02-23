@@ -123,7 +123,7 @@ vows.describe('merge data into markup').addBatch({
           create: true
         });
 
-        map.class('logo').use('url').as('src');
+        map.klass('logo').use('url').as('src');
         map.where('name').is('first_name').use('fname').as('value');
         map.where('name').is('last_name').use('lname').as('value');
 
