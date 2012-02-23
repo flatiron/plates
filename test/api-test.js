@@ -220,6 +220,13 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-16');
       }()
     ),
+
+    '(17) It should be able to iterate over deeply nested objects': (
+
+      function() {
+        return common.createTest('test-17');
+      }()
+    )
   }
 
 }).export(module);
