@@ -199,6 +199,20 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
+
+    '(15) It should be able to iterate over collections with multiple maps': (
+
+      function() {
+
+        var map = Plates.Map();
+
+        map.where("href").is("placeholder").insert("link");
+        map.class("names").use("names");
+
+        return common.createTest('test-15', map);
+
+      }()
+    ),
   }
 
 }).export(module);
