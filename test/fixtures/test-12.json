@@ -1,14 +1,23 @@
 {
-  "name": [
+  "names" : [
+
     {
       "first"  : "John",
       "middle" : "C",
-      "last"   : "Smith"
+      "last"   : "Smith",
+      "occupation": {
+        "title": "Freelancer",
+        "pay": 60000
+      }
     },
     {
       "first"  : "Jane",
       "middle" : "A",
-      "last"   : "Doe"
+      "last"   : "Doe",
+      "occupation": {
+        "title": "Doctor",
+        "pay": 120000
+      }
     }
   ]
 }
