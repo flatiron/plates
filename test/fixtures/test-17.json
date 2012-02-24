@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "organizations" : [
     {
       "name": "DotOrg",
@@ -36,52 +35,4 @@
       ]
     }
   ]
-=======
-  
-  "organizations" : [
-    
-    {
-      "name": "DotOrg",
-      
-      "staff": [
-        { 
-          "name": { 
-            "first": "Dot", 
-            "last" : "Matrix"
-          }
-        },
-        { 
-          "name": { 
-            "first": "Serious", 
-            "last" : "Business"
-          }
-        }
-      ]      
-      
-    },
-
-    {
-      "name": "FooBar",
-      
-      "staff": [
-        { 
-          "name": { 
-            "first": "Foo", 
-            "last" : "Bar"
-          }
-        },
-        { 
-          "name": { 
-            "first": "Baz", 
-            "last" : "Bitsom"
-          }
-        }
-      ]      
-      
-    }
-
-
-  ]
-
->>>>>>> Adds a test for deeply nested json/markup as per request
 }

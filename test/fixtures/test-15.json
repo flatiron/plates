@@ -2,9 +2,12 @@
   "link"  : "/foobar",
   "names" : [
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> Adds test to ensure multiple mappings can be achieved and will not influence iterators.
+=======
+>>>>>>> [test] Clean up iteration tests
     {
       "first"  : "John",
       "middle" : "C",

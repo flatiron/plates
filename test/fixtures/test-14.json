@@ -1,9 +1,5 @@
 {
   "names" : [
-<<<<<<< HEAD
-=======
-
->>>>>>> Adds the ability to properly map an iterative object, as tested in the newly added case 14.
     {
       "first"  : "John",
       "last"   : "Smith"
@@ -12,11 +8,5 @@
       "first"  : "Jane",
       "last"   : "Doe"
     }
-<<<<<<< HEAD
   ]
-=======
-  ],
-
-  "className" : "jim"
->>>>>>> Adds the ability to properly map an iterative object, as tested in the newly added case 14.
 }
