@@ -1,6 +1,5 @@
 {
   "names" : [
-
     {
       "first"  : "John",
       "last"   : "Smith"
@@ -9,7 +8,5 @@
       "first"  : "Jane",
       "last"   : "Doe"
     }
-  ],
-
-  "className" : "jim"
+  ]
 }

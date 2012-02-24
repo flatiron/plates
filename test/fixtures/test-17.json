@@ -1,48 +1,38 @@
 {
-  
   "organizations" : [
-    
     {
       "name": "DotOrg",
-      
       "staff": [
-        { 
-          "name": { 
-            "first": "Dot", 
+        {
+          "name": {
+            "first": "Dot",
             "last" : "Matrix"
           }
         },
-        { 
-          "name": { 
-            "first": "Serious", 
+        {
+          "name": {
+            "first": "Serious",
             "last" : "Business"
           }
         }
-      ]      
-      
+      ]
     },
-
     {
       "name": "FooBar",
-      
       "staff": [
-        { 
-          "name": { 
-            "first": "Foo", 
+        {
+          "name": {
+            "first": "Foo",
             "last" : "Bar"
           }
         },
-        { 
-          "name": { 
-            "first": "Baz", 
+        {
+          "name": {
+            "first": "Baz",
             "last" : "Bitsom"
           }
         }
-      ]      
-      
+      ]
     }
-
-
   ]
-
 }
