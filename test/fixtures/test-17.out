@@ -1,0 +1,41 @@
+<ul>
+  <li class="organizations">
+    <h3 class="name">DotOrg</h3>
+    <ul>
+      <li class="staff">
+        <table>
+          <tr class="name">
+            <td class="first">Dot</td>
+            <td class="last">Matrix</td>
+          </tr>
+        </table>
+      </li><li class="staff">
+        <table>
+          <tr class="name">
+            <td class="first">Serious</td>
+            <td class="last">Business</td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </li><li class="organizations">
+    <h3 class="name">FooBar</h3>
+    <ul>
+      <li class="staff">
+        <table>
+          <tr class="name">
+            <td class="first">Foo</td>
+            <td class="last">Bar</td>
+          </tr>
+        </table>
+      </li><li class="staff">
+        <table>
+          <tr class="name">
+            <td class="first">Baz</td>
+            <td class="last">Bitsom</td>
+          </tr>
+        </table>
+      </li>
+    </ul>
+  </li>
+</ul>
