@@ -148,20 +148,6 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    '(9) iterate a collection.': (
-
-      function() {
-
-        var map = Plates.Map();
-
-        map.where('href').is('/').insert('url');
-
-        return common.createTest('test-9', map);
-
-      }()
-
-    ),
-
     '(12) iterate a collection of over an element with children.': (
 
       function() {
@@ -191,7 +177,7 @@ vows.describe('merge data into markup').addBatch({
       function() {
 
         var map = Plates.Map();
-        
+
         map.class("names").use("names");
 
         return common.createTest('test-14', map);
@@ -213,12 +199,13 @@ vows.describe('merge data into markup').addBatch({
 
       }()
     ),
-    
+
     '(16) It should be able to iterate over simple arrays': (
 
       function() {
         return common.createTest('test-16');
       }()
+
     ),
 
     '(17) It should be able to iterate over deeply nested objects': (
@@ -226,7 +213,21 @@ vows.describe('merge data into markup').addBatch({
       function() {
         return common.createTest('test-17');
       }()
-    )
+
+    ),
+
+    '(18) It should be able to see the classnames properly': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.class("username").use("username");
+        map.class("name").use("name");
+
+        return common.createTest('test-18', map);
+      }()
+
+    ),
   }
 
 }).export(module);
