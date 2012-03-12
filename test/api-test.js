@@ -33,14 +33,11 @@ vows.describe('merge data into markup').addBatch({
     '(4) a tag with an arbitrary attribute that corresponds to a `data-key`.': (
 
       function() {
-
         var map = Plates.Map();
-
         map.where('src').is('google.com').use('key1');
         map.where('src').is('yahoo.com').use('key2');
 
         return common.createTest('test-4', map);
-
       }()
 
     ),
@@ -48,12 +45,10 @@ vows.describe('merge data into markup').addBatch({
     '(5) a tag with a class attribute whith a value that corresponds to a `data-key`.': (
 
       function() {
-
         var map = Plates.Map();
         map.where('class').is('hidden').use('key1');
 
         return common.createTest('test-5', map);
-
       }()
 
     ),
@@ -62,13 +57,11 @@ vows.describe('merge data into markup').addBatch({
     '(6) a tag with a class attribute whith a value that corresponds to a `data-key`, a second map item.': (
 
       function() {
-
         var map = Plates.Map();
         map.where('class').is('hidden').use('key1');
         map.where('href').is('/foo').use('key2').as('href');
 
         return common.createTest('test-6', map);
-
       }()
 
     ),
@@ -76,13 +69,11 @@ vows.describe('merge data into markup').addBatch({
     '(7) a map that redefines the default matching attribute of `id`.': (
 
       function() {
-
         var map = Plates.Map({
           where: 'class'
         });
 
         return common.createTest('test-7', map);
-
       }()
 
     ),
@@ -90,13 +81,10 @@ vows.describe('merge data into markup').addBatch({
     '(8) using the insert shortcut.': (
 
       function() {
-
         var map = Plates.Map();
-
         map.where('href').is('/').insert('newurl');
 
         return common.createTest('test-8', map);
-
       }()
 
     ),
@@ -104,13 +92,10 @@ vows.describe('merge data into markup').addBatch({
     '(9) iterate a collection.': (
 
       function() {
-
         var map = Plates.Map();
-
         map.where('href').is('/').insert('url');
 
         return common.createTest('test-9', map);
-
       }()
 
     ),
@@ -118,7 +103,6 @@ vows.describe('merge data into markup').addBatch({
     '(10) a map that defines creating missing attributes.' : (
 
       function() {
-
         var map = Plates.Map({
           create: true
         });
@@ -128,7 +112,6 @@ vows.describe('merge data into markup').addBatch({
         map.where('name').is('last_name').use('lname').as('value');
 
         return common.createTest('test-10', map);
-
       }()
 
     ),
@@ -136,14 +119,11 @@ vows.describe('merge data into markup').addBatch({
    '(11) differing on "is" parameter only.': (
 
       function() {
-
         var map = Plates.Map();
-
         map.where('name').is('method').use('method').as('value');
         map.where('name').is('id').use('id').as('value');
 
         return common.createTest('test-11', map);
-
       }()
 
     ),
@@ -151,9 +131,7 @@ vows.describe('merge data into markup').addBatch({
     '(12) iterate a collection of over an element with children.': (
 
       function() {
-
         return common.createTest('test-12');
-
       }()
 
     ),
@@ -161,13 +139,10 @@ vows.describe('merge data into markup').addBatch({
     '(13) attributes can contain valid characters': (
 
       function() {
-
         var map = Plates.Map();
-
         map.where('href').is('aA1-_:/&#1235; ').insert('test');
 
         return common.createTest('test-13', map);
-
       }()
 
     ),
@@ -175,13 +150,10 @@ vows.describe('merge data into markup').addBatch({
     '(14) It should be able to iterate over collections with maps': (
 
       function() {
-
         var map = Plates.Map();
-
         map.class("names").use("names");
 
         return common.createTest('test-14', map);
-
       }()
 
     ),
@@ -189,14 +161,11 @@ vows.describe('merge data into markup').addBatch({
     '(15) It should be able to iterate over collections with multiple maps': (
 
       function() {
-
         var map = Plates.Map();
-
         map.where("href").is("placeholder").insert("link");
         map.class("names").use("names");
 
         return common.createTest('test-15', map);
-
       }()
     ),
 
@@ -220,7 +189,6 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-
         map.class("username").use("username");
         map.class("name").use("name");
 
@@ -231,4 +199,3 @@ vows.describe('merge data into markup').addBatch({
   }
 
 }).export(module);
-
