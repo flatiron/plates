@@ -1,0 +1,5 @@
+{
+  "date" : "Sunday",
+  "host" : { "id": "pol_int", "name": "Poland" },
+  "guest" : { "id": "gre_int", "name": "Greece" }
+}

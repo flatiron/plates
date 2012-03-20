@@ -1,0 +1,9 @@
+<div class="date">Sunday</div>
+<div class="host">
+  <div class="id">pol_int</div>
+  <div class="name">Poland</div>
+</div>
+<div class="guest">
+  <div class="id">gre_int</div>
+  <div class="name">Greece</div>
+</div>

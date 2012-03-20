@@ -196,6 +196,14 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
+
+    '(19) It should be able to access nested objects': (
+
+      function() {
+        return common.createTest('test-19');
+      }()
+
+    ),
   }
 
 }).export(module);
