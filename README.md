@@ -134,14 +134,6 @@ function Map#class(attribute)
 @param attribute {String} an value that may be found in the class attribute of a tag
 ```
 
-### insert()
-
-```
-function Map#insert(attribute)
-@param attribute {String} a string that represents a data-key, data will be inserted into 
-the attribute that was specified in the `where` clause.
-```
-
 ### is()
 
 ```
@@ -154,6 +146,14 @@ function Map#is(value)
 ```
 function Map#has(value)
 @param value {String|RegExp} the value of the attribute specified in the `where` clause.
+```
+
+### insert()
+
+```
+function Map#insert(attribute)
+@param attribute {String} a string that represents a data-key, data will be inserted into 
+the attribute that was specified in the `where` clause.
 ```
 
 ### use()
