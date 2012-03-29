@@ -149,6 +149,13 @@ function Map#is(value)
 @param value {String} the value of the attribute specified in the `where` clause.
 ```
 
+### has()
+
+```
+function Map#has(value)
+@param value {String|RegExp} the value of the attribute specified in the `where` clause.
+```
+
 ### use()
 
 ```
