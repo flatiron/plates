@@ -196,6 +196,27 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
+
+    '(19) Replace partial value with a new value': (
+
+      function() {
+        var map = Plates.Map();
+        map.where("href").is(/^bar/).replace(/bar/, 'bazz');
+
+        return common.createTest('test-19', map);
+      }()
+    ),
+
+    '(20) Replace partial value with a new value from the data object': (
+
+      function() {
+        var map = Plates.Map();
+        map.where("href").has(/^bar/).use('test');
+
+        return common.createTest('test-20', map);
+      }()
+    )
+
   }
 
 }).export(module);
