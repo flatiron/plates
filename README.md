@@ -66,6 +66,19 @@ map.where('href').is('/').insert('newurl');
 console.log(Plates.bind(html, data, map));
 ```
 
+Partial value replacement
+
+```js
+var html = '<a href="/foo/bar"></a>';
+
+var data = { "newurl": "bazz" };
+var map = Plates.Map();
+
+map.where('href').has(/bar/).insert('newurl'); // `has` can take a regular expression.
+
+console.log(Plates.bind(html, data, map));
+```
+
 In even more complex cases, an arbitrary attribute an be specified, if a value is matched, a specific value can be used and then used as anther attribute's value.
 
 ```js

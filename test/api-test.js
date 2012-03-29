@@ -211,7 +211,7 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.where("href").has(/^bar/).use('test');
+        map.where("href").has(/^bar/).insert('test');
 
         return common.createTest('test-20', map);
       }()
