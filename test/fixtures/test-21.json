@@ -1,0 +1,31 @@
+{ 
+  "entries": [
+    {
+      "custid": 10101,
+      "created": "2001-01-01",
+      "user": {
+        "name": "John Q. User",
+        "city": "Atlanta",
+        "state": "GA"
+      }
+    },
+    {
+      "custid": 20202,
+      "created": "2002-02-02",
+      "user": {
+        "name": "Jane Q. User",
+        "city": "Mobile",
+        "state": "AL"
+      }
+    },
+    {
+      "custid": 30303,
+      "created": "2003-0303",
+      "user": {
+        "name": "Professor X",
+        "city": "Menlo",
+        "state": "CA"
+      }
+    }
+  ]
+}
