@@ -8,9 +8,9 @@ function get(name, extension) {
 
   try {
     return fs.readFileSync(
-      __dirname + 
-      '/fixtures/' + 
-      name + '.' + 
+      __dirname +
+      '/fixtures/' +
+      name + '.' +
       extension
     ).toString();
   } catch(e) {

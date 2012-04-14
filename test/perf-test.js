@@ -33,7 +33,7 @@ suite
 
   .add('mustache iterations', function() {
 
-  	var view = { 
+  	var view = {
       "stooges": [
         "Moe",
         "Larry",
@@ -47,7 +47,7 @@ suite
   })
   .add('plates iterations', function() {
 
-    var view = { 
+    var view = {
       "stooges": [
         "Moe",
         "Larry",
