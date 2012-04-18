@@ -99,9 +99,9 @@ Plates can also iterate through collections:
 ```js
 var html = '<div class="name"></div>';
 var collection = [
-  {'name': 'Louis CK'}
-  , {'name': 'Andy Kindler'}
-  , {'name': 'Greg Giraldo'}
+  {'name': 'Louis CK'},
+  {'name': 'Andy Kindler'},
+  {'name': 'Greg Giraldo'}
 ];
 
 console.log(Plates.bind(html, collection));
