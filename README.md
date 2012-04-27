@@ -1,4 +1,3 @@
-
 <img src="https://github.com/flatiron/plates/raw/master/plates.png" />
 
 # Synopsis
@@ -27,7 +26,7 @@ There are a few ways to use `plates`. Install the library using npm. You can add
 # Usage
 
 ## Simple case
-By default, `plates` will try to match the `data-key` in the data to an `ID` in the tag, since both should are uniqe.
+By default, `plates` will try to match the `data-key` in the data to an `ID` in the tag, since both should be unique.
 
 ```js
 var Plates = require('plates');
