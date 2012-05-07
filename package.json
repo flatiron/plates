@@ -2,25 +2,38 @@
   "name": "plates",
   "version": "0.4.6",
   "description": "Unobtrusive templating for the flatiron framework",
-  "keywords": ["templates", "templating", "unobtrusive"],
-  "author" : "hij1nx <hij1nx@gmail.com> http://twitter.com/hij1nx",
-  "maintainers": [
-    { "name": "Paolo Fragomeni", "email": "hij1nx@nodejitsu.com" },
-    { "name": "Maciej Małecki", "email": "maciej.malecki@notimplemented.org" }
+  "keywords": [
+    "templates",
+    "templating",
+    "unobtrusive"
   ],
-  "licenses": [{"type": "MIT"}],
-  "repositories": [{
+  "author": "Nodejitsu Inc. <info@nodejitsu.com>",
+  "maintainers": [
+    "hij1nx <paolo@nodejitsu.com>",
+    "pksunkara <pavan@nodejitsu.com>"
+  ],
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "repositories": [
+    {
       "type": "git",
       "url": "git://github.com/flatiron/plates.git"
-  }],
-  "devDependencies" : {
-    "vows" : "0.6.x",
-    "mustache" : "0.3.x",
-    "benchmark" : "0.2.x"
+    }
+  ],
+  "devDependencies": {
+    "vows": "0.6.x",
+    "mustache": "0.3.x",
+    "benchmark": "0.2.x"
   },
   "scripts": {
     "test": "vows --spec test/api-test.js"
   },
-  "engines": ["node"],
-  "main" : "./lib/plates.js"
+  "engines": [
+    "node"
+  ],
+  "main": "./lib/plates.js"
 }
+
