@@ -222,6 +222,13 @@ vows.describe('merge data into markup').addBatch({
       function() {
         return common.createTest('test-21');
       }()
+    ),
+
+    '(22) Keep your place after handling nested objects': (
+
+      function() {
+        return common.createTest('test-22');
+      }()
     )
 
   }
