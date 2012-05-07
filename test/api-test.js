@@ -224,7 +224,7 @@ vows.describe('merge data into markup').addBatch({
       }()
     ),
 
-    '(22) Keep your place after handling nested objects': (
+    '(22) Keep your place after handling nested objects, more varied html': (
 
       function() {
         return common.createTest('test-22');
