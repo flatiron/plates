@@ -92,6 +92,21 @@ map.where('data-foo').is('bar').use('imageurl').as('src');
 console.log(Plates.bind(html, data, map));
 ```
 
+## Collections
+
+Plates can also iterate through collections:
+
+```js
+var html = '<div class="name"></div>';
+var collection = [
+  {'name': 'Louis CK'},
+  {'name': 'Andy Kindler'},
+  {'name': 'Greg Giraldo'}
+];
+
+console.log(Plates.bind(html, collection));
+```
+
 # API
 
 ## Plates Static Methods
