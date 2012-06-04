@@ -1,8 +1,7 @@
-
 <img src="https://github.com/flatiron/plates/raw/master/plates.png" />
 
 # Synopsis
-Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in `Node.js`.
+Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in [Node.js](http://nodejs.org/).
 
 # Motivation
 - DSLs (Domain Specific Languages) such as <%=foo%> or {{foo}} reduce portability.
@@ -27,7 +26,7 @@ There are a few ways to use `plates`. Install the library using npm. You can add
 # Usage
 
 ## Simple case
-By default, `plates` will try to match the `data-key` in the data to an `ID` in the tag, since both should are uniqe.
+By default, `plates` will try to match the key in the data to an `id` in the tag, since both should be unique.
 
 ```js
 var Plates = require('plates');
@@ -39,7 +38,7 @@ var output = Plates.bind(html, data);
 ```
 
 ## Explicit instructions
-A common use case is to apply the new value to each tag's body based on the class attribute.
+A common use case is to apply the new value to each tag's body based on the `class` attribute.
 
 ```js
 var html = '<span class="name">User</span>...<span class="name">User</span>';
@@ -53,7 +52,7 @@ console.log(Plates.bind(html, data, map));
 ```
 
 ## Complex instructions
-Another common case is to want to replace the value of an attribute if it is a match.
+Another common case is to replace the value of an attribute if it is a match.
 
 ```js
 var html = '<a href="/"></a>';
@@ -79,7 +78,7 @@ map.where('href').has(/bar/).insert('newurl'); // `has` can take a regular expre
 console.log(Plates.bind(html, data, map));
 ```
 
-In even more complex cases, an arbitrary attribute an be specified, if a value is matched, a specific value can be used and then used as anther attribute's value.
+In even more complex cases, an arbitrary attribute can be specified. If a value is matched, a specific value can be used and then used as another attribute's value.
 
 ```js
 var html = '<a href="/"></a>';
@@ -113,21 +112,21 @@ console.log(Plates.bind(html, collection));
 
 ```
 function Plates.bind(html, data, map)
-@param html {String} A string of well formed HTML.
+@param html {String} A string of well-formed HTML.
 @param data {Object} A JSON object.
-@param map {Object} an instance of `Plates.Map()`.
+@param map {Object} An instance of `Plates.Map()`.
 
-@return {String} the result of merging the data and html.
+@return {String} The result of merging the data and html.
 ```
 
 ## Map Constructor
 
 ```
 function Plates.Map(options)
-@options {Object} an object literal that contains configuration options.
-  - @option where {String} the default attribute to match on instead of ID.
-  - @option as {String} the default attribute to replace into.
-@return {Object} an object that represents a reusable map, has mapping methods.
+@options {Object} An object literal that contains configuration options.
+  - @option where {String} The default attribute to match on instead of ID.
+  - @option as {String} The default attribute to replace into.
+@return {Object} An object that represents a reusable map, has mapping methods.
 ```
 
 ## Map Instance Methods
@@ -136,38 +135,38 @@ function Plates.Map(options)
 
 ```
 function Map#where(attribute)
-@param attribute {String} an attribute that may be found in a tag
+@param attribute {String} An attribute that may be found in a tag.
 
-This method will initiate a `clause`. Once a clause has been established,
-other member methods may be chained to eachother in any order.
+This method will initiate a clause. Once a clause has been established,
+other member methods may be chained to each other in any order.
 ```
 
 ### class()
 
 ```
 function Map#class(attribute)
-@param attribute {String} an value that may be found in the class attribute of a tag
+@param attribute {String} A value that may be found in the `class` attribute of a tag.
 ```
 
 ### is()
 
 ```
 function Map#is(value)
-@param value {String} the value of the attribute specified in the `where` clause.
+@param value {String} The value of the attribute specified in the `where` clause.
 ```
 
 ### has()
 
 ```
 function Map#has(value)
-@param value {String|RegExp} the value of the attribute specified in the `where` clause.
+@param value {String|RegExp} The value of the attribute specified in the `where` clause.
 ```
 
 ### insert()
 
 ```
 function Map#insert(attribute)
-@param attribute {String} a string that represents a data-key, data will be inserted into 
+@param attribute {String} A string that represents a key. Data will be inserted into 
 the attribute that was specified in the `where` clause.
 ```
 
@@ -175,14 +174,14 @@ the attribute that was specified in the `where` clause.
 
 ```
 function Map#use(key)
-@param key {String} a string that represents a key in the data object that was provided.
+@param key {String} A string that represents a key in the data object that was provided.
 ```
 
 ### to()
 
 ```
 function Map#to(key)
-@param key {String} a string that represents a key in the data object that was provided.
+@param key {String} A string that represents a key in the data object that was provided.
 
 Same as `use` method.
 ```
@@ -191,10 +190,10 @@ Same as `use` method.
 
 ```
 function Map#as(attribute)
-@param attribute {String} a string that represents an attribute in the tag.
+@param attribute {String} A string that represents an attribute in the tag.
 
 If there is no attribute by that name found, one may be created depending on the options
-that were passed to the Map constructor.
+that were passed to the `Map` constructor.
 ```
 
 # License
