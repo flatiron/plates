@@ -25,7 +25,7 @@
   ],
   "devDependencies": {
     "vows": "0.6.x",
-    "mustache": "0.3.x",
+    "mustache": "0.4.x",
     "benchmark": "0.2.x"
   },
   "scripts": {
