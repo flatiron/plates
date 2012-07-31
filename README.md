@@ -81,7 +81,7 @@ console.log(Plates.bind(html, data, map));
 In even more complex cases, an arbitrary attribute can be specified. If a value is matched, a specific value can be used and then used as another attribute's value.
 
 ```js
-var html = '<a href="/"></a>';
+var html = '<img data-foo="bar" src=""></img>';
 
 var data = { "imageurl": "http://www.nodejitsu.com" };
 var map = Plates.Map();
