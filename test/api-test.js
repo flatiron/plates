@@ -245,8 +245,55 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-23', map);
       }()
-    )
+    ),
 
+    '(24) Should append new templates': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('insert').append('<div class="trolling"></div>');
+
+        return common.createTest('test-24', map);
+      }()
+    ),
+
+    '(25) New templates should also process map and custom data': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        partial.class('trolling').to('boink');
+        map.class('insert').append('<div class="trolling"></div>', { boink: 'moo' }, partial);
+
+        return common.createTest('test-25', map);
+      }()
+    ),
+
+    '(26) When the data for the partial was provided as a string, get it from the parent data structure': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        partial.class('trolling').to('boink');
+        map.class('insert').append('<div class="trolling"></div>', 'partial', partial);
+
+        return common.createTest('test-26', map);
+      }()
+    ),
+
+    '(27) append should read from file system if no template has been provided': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        map.class('insert').append('./test/fixtures/partial-1.html');
+
+        return common.createTest('test-27', map);
+      }()
+    )
   }
 
 }).export(module);
