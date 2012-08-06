@@ -215,6 +215,27 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-20', map);
       }()
+    ),
+
+    '(21) Remove should remove the whole element': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('remove').remove();
+
+        return common.createTest('test-21', map);
+      }()
+    ),
+
+    '(22) Remove should remove the whole element': (
+
+      function() {
+        var map = Plates.Map();
+        map.where('type').is('email').remove();
+
+        // @TODO make sure that decrease the removal flag for self closing tags
+        return common.createTest('test-22', map);
+      }()
     )
 
   }
