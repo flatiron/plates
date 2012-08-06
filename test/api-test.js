@@ -1,5 +1,4 @@
 var vows = require('vows'),
-    assert = require('assert'),
     Plates = require('../lib/plates');
     common = require('./common');
 
