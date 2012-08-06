@@ -293,6 +293,18 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-27', map);
       }()
+    ),
+
+    '(28) it should repeat the partial for each item in the array': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        map.class('insert').append('./test/fixtures/partial-1.html', [{}, {}, {}]);
+
+        return common.createTest('test-28', map);
+      }()
     )
   }
 
