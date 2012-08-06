@@ -227,14 +227,23 @@ vows.describe('merge data into markup').addBatch({
       }()
     ),
 
-    '(22) Remove should remove the whole element': (
+    '(22) Remove should remove self closing elements': (
 
       function() {
         var map = Plates.Map();
         map.where('type').is('email').remove();
 
-        // @TODO make sure that decrease the removal flag for self closing tags
         return common.createTest('test-22', map);
+      }()
+    ),
+
+    '(23) Remove should remove self closing elements without optional ending slash': (
+
+      function() {
+        var map = Plates.Map();
+        map.where('type').is('email').remove();
+
+        return common.createTest('test-23', map);
       }()
     )
 
