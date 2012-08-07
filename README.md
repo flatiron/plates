@@ -21,12 +21,15 @@ Plates (short for templates) binds data to markup. Plates has NO special syntax.
 - TODO: Specify option to create attribute if it does not exist.
 
 # Installation
-There are a few ways to use `plates`. Install the library using npm. You can add it to your `package.json` file as a dependancy, or include the script in your HTML page.
+There are a few ways to use `plates`. Install the library using npm. You can add
+it to your `package.json` file as a dependancy, or include the script in your
+HTML page.
 
 # Usage
 
 ## Simple case
-By default, `plates` will try to match the key in the data to an `id` in the tag, since both should be unique.
+By default, `plates` will try to match the key in the data to an `id` in the
+tag, since both should be unique.
 
 ```js
 var Plates = require('plates');
@@ -38,7 +41,8 @@ var output = Plates.bind(html, data);
 ```
 
 ## Explicit instructions
-A common use case is to apply the new value to each tag's body based on the `class` attribute.
+A common use case is to apply the new value to each tag's body based on the
+`class` attribute.
 
 ```js
 var html = '<span class="name">User</span>...<span class="name">User</span>';
@@ -78,7 +82,9 @@ map.where('href').has(/bar/).insert('newurl'); // `has` can take a regular expre
 console.log(Plates.bind(html, data, map));
 ```
 
-In even more complex cases, an arbitrary attribute can be specified. If a value is matched, a specific value can be used and then used as another attribute's value.
+In even more complex cases, an arbitrary attribute can be specified. If a value
+is matched, a specific value can be used and then used as another attribute's
+value.
 
 ```js
 var html = '<img data-foo="bar" src=""></img>';
@@ -141,7 +147,7 @@ This method will initiate a clause. Once a clause has been established,
 other member methods may be chained to each other in any order.
 ```
 
-### class()
+### class(), className()
 
 ```
 function Map#class(attribute)
@@ -201,7 +207,24 @@ that were passed to the `Map` constructor.
 ```
 function Map#remove()
 
-Removes the matching element.
+Removes the matching elements from the template.
+```
+
+### append(), partial()
+
+```
+function Map#append(html, data, map)
+@param html {String} A string that represents the new template that needs to be
+added.
+@param data {Mixed} data for the partial, if it's a string it's a reference to a
+key in the data structure that was supplied to the main template.
+@param map {Plates.Map} data mapping for the partial.
+
+If the supplied HTML string doesn't contain any HTML markup we assume that we
+the given string is the location of the template. When you are using Plates on
+the browser is assumes that you supplied it with an id selector and will fetch
+the innerHTML from the element. If you are using Plates in Node.js it assumes
+that you gave it a file path that is relative to the current working directory.
 ```
 
 # License
