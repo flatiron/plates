@@ -112,6 +112,21 @@ var collection = [
 console.log(Plates.bind(html, collection));
 ```
 
+## Partials
+
+Plates also supports partials:
+
+```js
+var partial = '<li class="partial"></li>';
+var base = '<div><h1 class="foo"></h1><ul class="menu"></ul></div>';
+
+var baseData = { foo: 'bar' };
+var mapping = Plates.Map();
+
+mapping.class('menu').append(partial);
+console.log(Plates.bind(base, baseData, mapping));
+```
+
 # API
 
 ## Plates Static Methods
