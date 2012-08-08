@@ -220,7 +220,7 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('remove').remove();
+        map.class('removed').remove();
 
         return common.createTest('test-21', map);
       }()
