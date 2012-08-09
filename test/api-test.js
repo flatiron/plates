@@ -314,6 +314,18 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-29', map);
       }()
+    ),
+
+    '(30) a tag match without attributes should replace the contents': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('transformation').use(function (data, key) {
+          return data.uppercase.toLowerCase();
+        });
+
+        return common.createTest('test-30', map);
+      }()
     )
   }
 
