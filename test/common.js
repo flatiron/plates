@@ -11,12 +11,12 @@ function get(name, extension) {
       __dirname +
       '/fixtures/' +
       name + '.' +
-      extension
-    ).toString();
+      extension, 'utf8'
+    );
   } catch(e) {
     return null;
   }
-};
+}
 
 common.render = function(name, data, map) {
 
@@ -34,11 +34,11 @@ common.createTest = function(name, map) {
 
       return {
 
-        render: common.render(name, this.data, map),
+        render: common.render(name, this.data, map)
       };
     },
     'should merge data to markup': function(result) {
-      assert.equal(result.render, this.out);
+      assert.equal(this.out, result.render);
     }
   };
 

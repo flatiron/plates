@@ -1,0 +1,14 @@
+<div class="authors">
+  <ul>
+    <li class="author">
+      <h2 class="title">Title 1</h2>
+      <a class="name" href="//1">The author name is<span class="inner">Author 1</span></a>
+    </li><li class="author">
+      <h2 class="title">Title 2</h2>
+      <a class="name" href="//2">The author name is<span class="inner">Author 2</span></a>
+    </li><li class="author">
+      <h2 class="title">Title 3</h2>
+      <a class="name" href="//3">The author name is<span class="inner">Author 3</span></a>
+    </li>
+  </ul>
+</div>
