@@ -274,7 +274,7 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    '(24) Two maps for two attributes should update both attributes': (
+    '(24) Two maps for thr same class, updating two attributes should update both attributes': (
 
       function() {
         var map = Plates.Map();
@@ -282,6 +282,18 @@ vows.describe('merge data into markup').addBatch({
         map.class('author').use('class').as('class');
 
         return common.createTest('test-24', map);
+      }()
+    ),
+
+    '(25) Two maps for thr same class, updating two attributes plus a body class map should update both attributes': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('author').use('class').as('class');
+        map.class('author').to('name');
+
+        return common.createTest('test-25', map);
       }()
     )
 
