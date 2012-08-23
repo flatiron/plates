@@ -295,6 +295,34 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-25', map);
       }()
+    ),
+
+    '(26) complex nesting should work as expected': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('author');
+        map.class('name').use('name');
+        map.class('name').use('link').as('href');
+        map.class('title').use('title');
+        map.class('inner').use('inner');
+
+        return common.createTest('test-26', map);
+      }()
+    ),
+
+    '(27) complex nesting with arrays should work as expected': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('author');
+        map.class('name').use('name');
+        map.class('name').use('link').as('href');
+        map.class('title').use('title');
+        map.class('inner').use('inner');
+
+        return common.createTest('test-26', map);
+      }()
     )
 
 
