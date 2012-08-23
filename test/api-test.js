@@ -215,6 +215,31 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-20', map);
       }()
+    ),
+
+    '(21) Two maps on the same class, one for attribute work if the attribute one comes last': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').to('name');
+        map.class('author').use('url').as('href');
+
+        return common.createTest('test-21', map);
+      }()
+
+    ),
+
+    '(22) Two maps on the same class, one for attribute work if the attribute one comes first': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('doesnotexist').to('donotcare');
+        map.class('author').to('name');
+
+        return common.createTest('test-22', map);
+      }()
+
     )
 
   }
