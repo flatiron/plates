@@ -272,6 +272,17 @@ vows.describe('merge data into markup').addBatch({
         
       }()
 
+    ),
+
+    '(24) Two maps for two attributes should update both attributes': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('author').use('class').as('class');
+
+        return common.createTest('test-24', map);
+      }()
     )
 
 
