@@ -240,7 +240,41 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-22', map);
       }()
 
+    ),
+
+    '(23) Two maps on the same attribute and value should throw': (
+
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('author').to('name');
+        map.class('author').to('name');
+
+        return {
+          topic: function() {
+
+            try {
+              Plates.bind('<a></a>', {a:1}, map);
+            } catch(err) {
+              return {
+                error: err
+              };
+            }
+            return {};
+
+          },
+          'should throw': function(result) {
+            assert.ok(!! result.error, 'Should have thrown');
+            assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
+          }
+        };
+        
+      }()
+
     )
+
+
 
   }
 

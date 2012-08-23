@@ -34,7 +34,7 @@ common.createTest = function(name, map) {
 
       return {
 
-        render: common.render(name, this.data, map),
+        render: common.render(name, this.data, map)
       };
     },
     'should merge data to markup': function(result) {
