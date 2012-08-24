@@ -1,4 +1,5 @@
 var vows = require('vows'),
+    assert = require('assert'),
     Plates = require('../lib/plates');
     common = require('./common');
 
@@ -151,6 +152,8 @@ vows.describe('merge data into markup').addBatch({
       function() {
         var map = Plates.Map();
         map.class("names").use("names");
+        map.class("first").use("first");
+        map.class("last").use("last");
 
         return common.createTest('test-14', map);
       }()
@@ -163,6 +166,9 @@ vows.describe('merge data into markup').addBatch({
         var map = Plates.Map();
         map.where("href").is("placeholder").insert("link");
         map.class("names").use("names");
+        map.class("first").use("first");
+        map.class("middle").use("middle");
+        map.class("last").use("last");
 
         return common.createTest('test-15', map);
       }()
@@ -325,6 +331,115 @@ vows.describe('merge data into markup').addBatch({
         });
 
         return common.createTest('test-30', map);
+      }()
+    ),
+
+    '(31) Two maps on the same class, one for attribute work if the attribute one comes last': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').to('name');
+        map.class('author').use('url').as('href');
+
+        return common.createTest('test-31', map);
+      }()
+
+    ),
+
+    '(32) Two maps on the same class, one for attribute work if the attribute one comes first': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('doesnotexist').to('donotcare');
+        map.class('author').to('name');
+
+        return common.createTest('test-32', map);
+      }()
+
+    ),
+
+    '(33) Two maps on the same attribute and value should throw': (
+
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('author').to('name');
+        map.class('author').to('name');
+
+        return {
+          topic: function() {
+
+            try {
+              Plates.bind('<a></a>', {a:1}, map);
+            } catch(err) {
+              return {
+                error: err
+              };
+            }
+            return {};
+
+          },
+          'should throw': function(result) {
+            assert.ok(!! result.error, 'Should have thrown');
+            assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
+          }
+        };
+        
+      }()
+
+    ),
+
+    '(34) Two maps for thr same class, updating two attributes should update both attributes': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('author').use('class').as('class');
+
+        return common.createTest('test-34', map);
+      }()
+    ),
+
+    '(35) Two maps for thr same class, updating two attributes plus a body class map should update both attributes': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('url').as('href');
+        map.class('author').use('class').as('class');
+        map.class('author').to('name');
+
+
+        return common.createTest('test-35', map);
+      }()
+    ),
+
+    '(36) complex nesting should work as expected': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('author');
+        map.class('name').use('name');
+        map.class('name').use('link').as('href');
+        map.class('title').use('title');
+        map.class('inner').use('inner');
+
+        return common.createTest('test-36', map);
+      }()
+    ),
+
+    '(37) complex nesting with arrays should work as expected': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('author').use('author');
+        map.class('name').use('name');
+        map.class('name').use('link').as('href');
+        map.class('title').use('title');
+        map.class('inner').use('inner');
+
+        return common.createTest('test-37', map);
       }()
     )
   }
