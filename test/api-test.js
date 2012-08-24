@@ -1,5 +1,4 @@
 var vows = require('vows'),
-    assert = require('assert'),
     Plates = require('../lib/plates');
     common = require('./common');
 
@@ -215,8 +214,119 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-20', map);
       }()
-    )
+    ),
 
+    '(21) Remove should remove the whole element': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('removed').remove();
+
+        return common.createTest('test-21', map);
+      }()
+    ),
+
+    '(22) Remove should remove self closing elements': (
+
+      function() {
+        var map = Plates.Map();
+        map.where('type').is('email').remove();
+
+        return common.createTest('test-22', map);
+      }()
+    ),
+
+    '(23) Remove should remove self closing elements without optional ending slash': (
+
+      function() {
+        var map = Plates.Map();
+        map.where('type').is('email').remove();
+
+        return common.createTest('test-23', map);
+      }()
+    ),
+
+    '(24) Should append new templates': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('insert').append('<div class="trolling"></div>');
+
+        return common.createTest('test-24', map);
+      }()
+    ),
+
+    '(25) New templates should also process map and custom data': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        partial.class('trolling').to('boink');
+        map.class('insert').append('<div class="trolling"></div>', { boink: 'moo' }, partial);
+
+        return common.createTest('test-25', map);
+      }()
+    ),
+
+    '(26) When the data for the partial was provided as a string, get it from the parent data structure': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        partial.class('trolling').to('boink');
+        map.class('insert').append('<div class="trolling"></div>', 'partial', partial);
+
+        return common.createTest('test-26', map);
+      }()
+    ),
+
+    '(27) append should read from file system if no template has been provided': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        map.class('insert').append('./test/fixtures/partial-1.html');
+
+        return common.createTest('test-27', map);
+      }()
+    ),
+
+    '(28) it should repeat the partial for each item in the array': (
+
+      function() {
+        var map = Plates.Map();
+        var partial = Plates.Map();
+
+        map.class('insert').append('./test/fixtures/partial-1.html', [{}, {}, {}]);
+
+        return common.createTest('test-28', map);
+      }()
+    ),
+
+    '(29) a tag match without attributes should replace the contents': (
+
+      function() {
+        var map = Plates.Map();
+        map.tag('div').use('foo');
+
+        return common.createTest('test-29', map);
+      }()
+    ),
+
+    '(30) a tag match without attributes should replace the contents': (
+
+      function() {
+        var map = Plates.Map();
+        map.class('transformation').use(function (data, key) {
+          return data.uppercase.toLowerCase();
+        });
+
+        return common.createTest('test-30', map);
+      }()
+    )
   }
 
 }).export(module);
