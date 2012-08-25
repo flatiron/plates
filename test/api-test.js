@@ -441,6 +441,17 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-37', map);
       }()
+    ),
+    '(38) spaces in attributes': (
+
+      function() {
+        
+        var map = Plates.Map();
+        map.class('inner').use('inner');
+
+        return common.createTest('test-38', map);
+     
+      }()
     )
   }
 
