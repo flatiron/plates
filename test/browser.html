@@ -484,6 +484,20 @@
 <div id="key1" style="visible: foobar > 1">value1</div>
 
 </script>
+
+<script type="test/fixture" id="test-30.json">
+{ "uppercase": "UPPERCASED" }
+
+</script>
+<script type="test/fixture" id="test-30.html">
+<div class="transformation"></div>
+
+</script>
+<script type="test/fixture" id="test-30.out">
+<div class="transformation">uppercased</div>
+
+</script>
+
 <script type="test/fixture" id="test-4.html">
 <a id="someid" src="google.com"></a>
 <a id="someotherid" src="yahoo.com"></a>
@@ -806,4 +820,14 @@ test("(29) a tag match without attributes should replace the contents", function
 
  return common.createTest('test-29', map);
 });
+
+test("(30) use can be passed a function which returns the value", function() {
+  var map = Plates.Map();
+  map.class('transformation').use(function (data, key) {
+    return data.uppercase.toLowerCase();
+  });
+
+  return common.createTest('test-30', map);
+});
+
 </script>

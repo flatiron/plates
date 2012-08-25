@@ -322,7 +322,7 @@ vows.describe('merge data into markup').addBatch({
       }()
     ),
 
-    '(30) a tag match without attributes should replace the contents': (
+    '(30) use can be passed a function which returns the value': (
 
       function() {
         var map = Plates.Map();
