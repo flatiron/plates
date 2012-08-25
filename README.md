@@ -195,14 +195,18 @@ the attribute that was specified in the `where` clause.
 
 ```
 function Map#use(key)
-@param key {String} A string that represents a key in the data object that was provided.
+@param key {String|Function} A string that represents a key in the data object that was provided or a function which returns a string value to use.
+
+If a function is provided, it will be passed data, value and tagbody parameters.
 ```
 
 ### to()
 
 ```
 function Map#to(key)
-@param key {String} A string that represents a key in the data object that was provided.
+@param key {String|Function} A string that represents a key in the data object that was provided or a function which returns a string value to use.
+
+If a function is provided, it will be passed data, value and tagbody parameters.
 
 Same as `use` method.
 ```
