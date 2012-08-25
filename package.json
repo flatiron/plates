@@ -1,6 +1,6 @@
 {
   "name": "plates",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "description": "Unobtrusive templating for the flatiron framework",
   "keywords": [
     "templates",
