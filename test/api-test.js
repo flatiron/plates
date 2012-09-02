@@ -462,11 +462,6 @@ vows.describe('merge data into markup').addBatch({
 
         var map = Plates.Map();
 
-        // map.className('breadcrumb').to('breadcrumb');
-        // map.className('breadcrumb-element').to('breadcrumb-element');
-        // map.className('category-name').to('breadcrumb-name');
-        // map.className('category-name').to('breadcrumb-url').as('href');
-
         map.className('author').to('author');
 
         return common.createTest('test-39', map);
