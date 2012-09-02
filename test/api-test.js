@@ -442,6 +442,7 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-37', map);
       }()
     ),
+
     '(38) spaces in attributes': (
 
       function() {
@@ -452,6 +453,20 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-38', map);
      
       }()
+    ),
+
+    '(39) Nesting arrays with objects with arrays should work': (
+
+
+      function() {
+
+        var map = Plates.Map();
+
+        map.className('author').to('author');
+
+        return common.createTest('test-39', map);
+      }()
+
     )
   }
 
