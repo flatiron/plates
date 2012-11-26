@@ -172,6 +172,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-15', map);
       }()
+
     ),
 
     '(16) It should be able to iterate over simple arrays': (
@@ -210,6 +211,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-19', map);
       }()
+
     ),
 
     '(20) Replace partial value with a new value from the data object': (
@@ -220,6 +222,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-20', map);
       }()
+
     ),
 
     '(21) Remove should remove the whole element': (
@@ -230,6 +233,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-21', map);
       }()
+
     ),
 
     '(22) Remove should remove self closing elements': (
@@ -240,6 +244,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-22', map);
       }()
+
     ),
 
     '(23) Remove should remove self closing elements without optional ending slash': (
@@ -250,6 +255,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-23', map);
       }()
+
     ),
 
     '(24) Should append new templates': (
@@ -260,6 +266,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-24', map);
       }()
+
     ),
 
     '(25) New templates should also process map and custom data': (
@@ -273,6 +280,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-25', map);
       }()
+
     ),
 
     '(26) When the data for the partial was provided as a string, get it from the parent data structure': (
@@ -286,6 +294,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-26', map);
       }()
+
     ),
 
     '(27) append should read from file system if no template has been provided': (
@@ -298,6 +307,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-27', map);
       }()
+
     ),
 
     '(28) it should repeat the partial for each item in the array': (
@@ -310,6 +320,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-28', map);
       }()
+
     ),
 
     '(29) a tag match without attributes should replace the contents': (
@@ -320,6 +331,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-29', map);
       }()
+
     ),
 
     '(30) use can be passed a function which returns the value': (
@@ -332,6 +344,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-30', map);
       }()
+
     ),
 
     '(31) Two maps on the same class, one for attribute work if the attribute one comes last': (
@@ -386,7 +399,7 @@ vows.describe('merge data into markup').addBatch({
             assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
           }
         };
-        
+
       }()
 
     ),
@@ -400,6 +413,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-34', map);
       }()
+
     ),
 
     '(35) Two maps for thr same class, updating two attributes plus a body class map should update both attributes': (
@@ -410,9 +424,9 @@ vows.describe('merge data into markup').addBatch({
         map.class('author').use('class').as('class');
         map.class('author').to('name');
 
-
         return common.createTest('test-35', map);
       }()
+
     ),
 
     '(36) complex nesting should work as expected': (
@@ -427,6 +441,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-36', map);
       }()
+
     ),
 
     '(37) complex nesting with arrays should work as expected': (
@@ -441,32 +456,43 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-37', map);
       }()
+
     ),
 
     '(38) spaces in attributes': (
 
       function() {
-        
         var map = Plates.Map();
         map.class('inner').use('inner');
 
         return common.createTest('test-38', map);
-     
+
       }()
+
     ),
 
     '(39) Nesting arrays with objects with arrays should work': (
 
-
       function() {
-
         var map = Plates.Map();
 
         map.className('author').to('author');
 
         return common.createTest('test-39', map);
       }()
+    ),
 
+    '(40) Nested objects can be accessed using dot notiation': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.className('zero').to('counts.zero');
+        map.className('one').to('counts.one');
+        map.className('banana').to('ringring');
+
+        return common.createTest('test-40', map);
+      }()
     )
   }
 
