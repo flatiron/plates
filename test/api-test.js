@@ -493,6 +493,17 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-40', map);
       }()
+    ),
+
+    '(41) Should remove the correct element': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.className('ssl').remove();
+
+        return common.createTest('test-41', map);
+      }()
     )
   }
 
