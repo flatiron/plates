@@ -504,6 +504,52 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+    ),
+
+    '(42) Ignoring a selection of undefined attributes': (
+
+      function() {
+        var map = Plates.Map({
+          create: true,
+          ignoreEmpty: ['id']
+        });
+
+        map.className('item').use('id').as('id');
+        map.className('item').use('mung').as('data-mung');
+
+        return common.createTest('test-42', map);
+      }()
+    ),
+
+    '(43) Ignore undefined all undefined attributes': (
+      
+      function() {
+        var map = Plates.Map({
+          create: true,
+          ignoreEmpty: true
+        });
+
+        map.className('item').use('id').as('id');
+        map.className('item').use('mung').as('data-mung');
+
+        return common.createTest('test-43', map);
+      }()
+    ),
+
+    '(44) Ignore a particular undefined attribute': (
+
+        function() {
+
+        var map = Plates.Map({
+          create: true,
+          ignoreEmpty: 'data-mung'
+        });
+
+        map.className('item').use('id').as('id');
+        map.className('item').use('mung').as('data-mung');
+
+        return common.createTest('test-44', map);
+      }()
     )
   }
 

@@ -1,3 +1,6 @@
+*.swp
+.exrc
+_exrc
 gmon.out
 .DS_Store
 index.html
