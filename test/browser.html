@@ -607,7 +607,7 @@ var common = {
 
     var result = Plates.bind(html, data, map);
 
-    assert.equal(
+    QUnit.assert.equal(
         result.trim().replace(/[\n|\r]/g, '')
       , out.trim().replace(/[\n|\r]/g, '')
       , 'Expecting `' + html + '` to equal `' + out + '`'
