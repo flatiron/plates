@@ -732,6 +732,29 @@
 </form>
 
 </script>
+<script type="test/fixture" id="test-42.html">
+<div data-bind='key'></div>
+</script>
+<script type="test/fixture" id="test-42.json">
+{
+  "key": "value"
+}
+
+</script>
+<script type="test/fixture" id="test-42.out">
+<div data-bind='key'>value</div>
+</script>
+<script type="test/fixture" id="test-43.html">
+<a data-bind-href="key">Value</a>
+</script>
+<script type="test/fixture" id="test-43.json">
+{
+  "key": "/bar"
+}
+</script>
+<script type="test/fixture" id="test-43.out">
+<a data-bind-href="key" href="/bar">Value</a>
+</script>
 <script type="test/fixture" id="test-5.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
 </script>
@@ -1166,6 +1189,14 @@ test("(41) Should remove the correct element", function () {
   map.className('ssl').remove();
 
   return common.createTest('test-41', map);
+});
+
+test("(42) Support data-bind without mapping", function () {
+  return common.createTest('test-42');
+});
+
+test("(43) Support data-bind-attr without mapping", function () {
+  return common.createTest('test-43');
 });
 
 </script>

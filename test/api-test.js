@@ -516,6 +516,22 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+    ),
+    
+    '(42) Support data-bind without mapping': (
+
+      function() {
+        return common.createTest('test-42');
+      }()
+
+    ),
+    
+    '(43) Support data-bind-attr without mapping': (
+
+      function() {
+        return common.createTest('test-43');
+      }()
+
     )
   }
 
