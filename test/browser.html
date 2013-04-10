@@ -757,7 +757,7 @@
 </script>
 <script type="test/fixture" id="test-7.html">
 <a id="someid1" class="name" href="/foo"></a>
-<a id="someid2" class="name" href="/foo"></a>
+<a id="someid2" onclick="name" href="/foo"></a>
 </script>
 <script type="test/fixture" id="test-7.json">
 {
@@ -766,7 +766,7 @@
 </script>
 <script type="test/fixture" id="test-7.out">
 <a id="someid1" class="name" href="/foo">Alpha</a>
-<a id="someid2" class="name" href="/foo">Alpha</a>
+<a id="someid2" onclick="name" href="/foo"></a>
 </script>
 <script type="test/fixture" id="test-8.html">
 <a href="/"></a>
@@ -914,7 +914,11 @@ test("(11) differing on \"is\" parameter only.", function () {
 });
 
 test("(12) iterate a collection of over an element with children.", function () {
-  return common.createTest('test-12');
+  var map = Plates.Map({
+    where: 'class'
+  });
+
+  return common.createTest('test-12', map);
 });
 
 test("(13) attributes can contain valid characters", function () {
@@ -940,11 +944,19 @@ test("(15) It should be able to iterate over collections with multiple maps", fu
 });
 
 test("(16) It should be able to iterate over simple arrays", function () {
-  return common.createTest('test-16');
+  var map = Plates.Map({
+    where: 'class'
+  });
+
+  return common.createTest('test-16', map);
 });
 
 test("(17) It should be able to iterate over deeply nested objects", function () {
-  return common.createTest('test-17');
+  var map = Plates.Map({
+    where: 'class'
+  });
+  
+  return common.createTest('test-17', map);
 });
 
 test("(18) It should be able to see the classnames properly", function () {

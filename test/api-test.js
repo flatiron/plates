@@ -131,7 +131,11 @@ vows.describe('merge data into markup').addBatch({
     '(12) iterate a collection of over an element with children.': (
 
       function() {
-        return common.createTest('test-12');
+        var map = Plates.Map({
+          where: 'class'
+        });
+
+        return common.createTest('test-12', map);
       }()
 
     ),
@@ -178,7 +182,11 @@ vows.describe('merge data into markup').addBatch({
     '(16) It should be able to iterate over simple arrays': (
 
       function() {
-        return common.createTest('test-16');
+        var map = Plates.Map({
+          where: 'class'
+        });
+
+        return common.createTest('test-16', map);
       }()
 
     ),
@@ -186,7 +194,11 @@ vows.describe('merge data into markup').addBatch({
     '(17) It should be able to iterate over deeply nested objects': (
 
       function() {
-        return common.createTest('test-17');
+        var map = Plates.Map({
+          where: 'class'
+        });
+
+        return common.createTest('test-17', map);
       }()
 
     ),
