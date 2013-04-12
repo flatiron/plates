@@ -532,6 +532,14 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-43');
       }()
 
+    ),
+    
+    '(44) Non matching data-bind should do nothing': (
+
+      function() {
+        return common.createTest('test-44');
+      }()
+
     )
   }
 

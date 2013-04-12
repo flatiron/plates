@@ -755,6 +755,15 @@
 <script type="test/fixture" id="test-43.out">
 <a data-bind-href="key" href="/bar">Value</a>
 </script>
+<script type="test/fixture" id="test-44.html">
+<div data-bind="key">Should not be changed</div>
+</script>
+<script type="test/fixture" id="test-44.json">
+{}
+</script>
+<script type="test/fixture" id="test-44.out">
+<div data-bind="key">Should not be changed</div>
+</script>
 <script type="test/fixture" id="test-5.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
 </script>
@@ -1197,6 +1206,10 @@ test("(42) Support data-bind without mapping", function () {
 
 test("(43) Support data-bind-attr without mapping", function () {
   return common.createTest('test-43');
+});
+
+test("(44) Non matching data-bind should do nothing", function () {
+  return common.createTest('test-44');
 });
 
 </script>
