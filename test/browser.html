@@ -632,12 +632,12 @@
 </script>
 <script type="test/fixture" id="test-39.html">
 <div class="row-fluid content">
-  
+
   <div class="span4" role="complementary">
     <h2>Authors</h2>
     <div class="author"></div>
   </div>
-    
+
 </div>
 </script>
 <script type="test/fixture" id="test-39.json">
@@ -647,12 +647,12 @@
 </script>
 <script type="test/fixture" id="test-39.out">
 <div class="row-fluid content">
-  
+
   <div class="span4" role="complementary">
     <h2>Authors</h2>
     <div class="author">ABC</div><div class="author">DEF</div>
   </div>
-    
+
 </div>
 </script>
 <script type="test/fixture" id="test-4.html">
@@ -1057,7 +1057,7 @@ test("(17) It should be able to iterate over deeply nested objects", function ()
   var map = Plates.Map({
     where: 'class'
   });
-  
+
   return common.createTest('test-17', map);
 });
 
@@ -1195,10 +1195,10 @@ test("(33) Two maps on the same attribute and value should throw", function () {
   }
 
   QUnit.assert.ok(!! result.error, 'Should have thrown');
-  QUnit.assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author'); 
+  QUnit.assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
 });
 
-test("(34) Two maps for thr same class, updating two attributes should update both attributes", function () {
+test("(34) Two maps for the same class, updating two attributes should update both attributes", function () {
   var map = Plates.Map();
   map.class('author').use('url').as('href');
   map.class('author').use('class').as('class');
@@ -1206,7 +1206,7 @@ test("(34) Two maps for thr same class, updating two attributes should update bo
   return common.createTest('test-34', map);
 });
 
-test("(35) Two maps for thr same class, updating two attributes plus a body class map should update both attributes", function () {
+test("(35) Two maps for the same class, updating two attributes plus a body class map should update both attributes", function () {
   var map = Plates.Map();
   map.class('author').use('url').as('href');
   map.class('author').use('class').as('class');

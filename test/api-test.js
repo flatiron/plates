@@ -386,7 +386,6 @@ vows.describe('merge data into markup').addBatch({
 
     '(33) Two maps on the same attribute and value should throw': (
 
-
       function() {
         var map = Plates.Map();
         map.class('author').use('url').as('href');
@@ -411,12 +410,11 @@ vows.describe('merge data into markup').addBatch({
             assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
           }
         };
-
       }()
 
     ),
 
-    '(34) Two maps for thr same class, updating two attributes should update both attributes': (
+    '(34) Two maps for the same class, updating two attributes should update both attributes': (
 
       function() {
         var map = Plates.Map();
@@ -428,7 +426,7 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    '(35) Two maps for thr same class, updating two attributes plus a body class map should update both attributes': (
+    '(35) Two maps for the same class, updating two attributes plus a body class map should update both attributes': (
 
       function() {
         var map = Plates.Map();
@@ -492,6 +490,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-39', map);
       }()
+
     ),
 
     '(40) Nested objects can be accessed using dot notiation': (
@@ -505,6 +504,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-40', map);
       }()
+
     ),
 
     '(41) Should remove the correct element': (
@@ -516,8 +516,9 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+
     ),
-    
+
     '(42) Support data-bind without mapping': (
 
       function() {
@@ -525,7 +526,7 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
-    
+
     '(43) Support data-bind-attr without mapping': (
 
       function() {
@@ -533,7 +534,7 @@ vows.describe('merge data into markup').addBatch({
       }()
 
     ),
-    
+
     '(44) Non matching data-bind should do nothing': (
 
       function() {
