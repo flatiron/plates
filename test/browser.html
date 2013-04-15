@@ -775,6 +775,53 @@
 <script type="test/fixture" id="test-45.out">
 <li id="zero">0</li>
 </script>
+<script type="test/fixture" id="test-46.html">
+<li id="zero"></li>
+<li class="test"></li>
+</script>
+<script type="test/fixture" id="test-46.json">
+{
+  "zero": 0,
+  "one": 1
+}
+</script>
+<script type="test/fixture" id="test-46.out">
+<li id="zero">0</li>
+<li class="test">1</li>
+</script>
+<script type="test/fixture" id="test-47.html">
+<a data-bind-href="zero" data-bind-class="test" class="">link</a>
+</script>
+<script type="test/fixture" id="test-47.json">
+{
+  "zero": "/sub-zero",
+  "one": "oneclass"
+}
+</script>
+<script type="test/fixture" id="test-47.out">
+<a data-bind-href="zero" data-bind-class="test" class="oneclass" href="/sub-zero">link</a>
+</script>
+<script type="test/fixture" id="test-48.html">
+<a data-bind-href="zero" data-bind="test">link</a>
+</script>
+<script type="test/fixture" id="test-48.json">
+{
+  "zero": "/sub-zero",
+  "one": "Super link"
+}
+</script>
+<script type="test/fixture" id="test-48.out">
+<a data-bind-href="zero" data-bind="test" href="/sub-zero">Super link</a>
+</script>
+<script type="test/fixture" id="test-49.html">
+<a data-bind-href="zero" href="/some-link">link</a>
+</script>
+<script type="test/fixture" id="test-49.json">
+{}
+</script>
+<script type="test/fixture" id="test-49.out">
+<a data-bind-href="zero" href="/some-link">link</a>
+</script>
 <script type="test/fixture" id="test-5.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
 </script>
@@ -785,6 +832,18 @@
 </script>
 <script type="test/fixture" id="test-5.out">
 <a id="someid" class="red hidden large" href="/foo">New Value</a>
+</script>
+<script type="test/fixture" id="test-50.html">
+<a data-bind="test">link</a>
+</script>
+<script type="test/fixture" id="test-50.json">
+{
+  "one": "Super link",
+  "test": "Not wanted"
+}
+</script>
+<script type="test/fixture" id="test-50.out">
+<a data-bind="test">Super link</a>
 </script>
 <script type="test/fixture" id="test-6.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
@@ -1226,5 +1285,43 @@ test("(44) Non matching data-bind should do nothing", function () {
 test("(45) Should allow the value of 0 in convention mapping case", function () {
   return common.createTest('test-45');
 });
-  
+
+test("(46) Should allow mixing convention and configuration", function () {
+  var map = Plates.Map();
+
+  map.class('test').to('one');
+
+  return common.createTest('test-46', map);
+});
+
+test("(47) Should allow mixing convention and configuration for attributes", function () {
+  var map = Plates.Map();
+
+  map.where('data-bind-class').is('test').use('one').as('class');
+
+  return common.createTest('test-47', map);
+});
+
+test("(48) Should allow mixing convention (for an attribute) and configuration (for tag content)", function () {
+  var map = Plates.Map();
+
+  map.where('data-bind').is('test').use('one');
+
+  return common.createTest('test-48', map);
+});
+
+test("(49) Should only set attribute (data-bind-attr) if data exists", function () {
+  return common.createTest('test-49');
+});
+
+test("(50) Do not apply default mapping if explicit mapping is set", function () {
+  var map = Plates.Map();
+
+  map.where('data-bind').is('test').use(function (data, key) {
+    return (data['one']);
+  });
+
+  return common.createTest('test-50', map);
+});
+
 </script>

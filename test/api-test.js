@@ -548,6 +548,64 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-45');
       }()
 
+    ),
+
+    '(46) Should allow mixing convention and configuration': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.class('test').to('one');
+
+        return common.createTest('test-46', map);
+      }()
+
+    ),
+
+    '(47) Should allow mixing convention and configuration for attributes': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('data-bind-class').is('test').use('one').as('class');
+
+        return common.createTest('test-47', map);
+      }()
+
+    ),
+
+    '(48) Should allow mixing convention (for an attribute) and configuration (for tag content)': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('data-bind').is('test').use('one');
+
+        return common.createTest('test-48', map);
+      }()
+
+    ),
+
+    '(49) Should only set attribute (data-bind-attr) if data exists': (
+
+      function() {
+        return common.createTest('test-49');
+      }()
+
+    ),
+
+    '(50) Do not apply default mapping if explicit mapping is set': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('data-bind').is('test').use(function (data, key) {
+          return (data['one']);
+        });
+
+        return common.createTest('test-50', map);
+      }()
+
     )
   }
 

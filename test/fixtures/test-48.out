@@ -1,0 +1,1 @@
+<a data-bind-href="zero" data-bind="test" href="/sub-zero">Super link</a>
