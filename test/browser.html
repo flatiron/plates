@@ -764,6 +764,17 @@
 <script type="test/fixture" id="test-44.out">
 <div data-bind="key">Should not be changed</div>
 </script>
+<script type="test/fixture" id="test-45.html">
+<li id="zero"></li>
+</script>
+<script type="test/fixture" id="test-45.json">
+{
+  "zero": 0
+}
+</script>
+<script type="test/fixture" id="test-45.out">
+<li id="zero">0</li>
+</script>
 <script type="test/fixture" id="test-5.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
 </script>
@@ -1212,4 +1223,8 @@ test("(44) Non matching data-bind should do nothing", function () {
   return common.createTest('test-44');
 });
 
+test("(45) Should allow the value of 0 in convention mapping case", function () {
+  return common.createTest('test-45');
+});
+  
 </script>

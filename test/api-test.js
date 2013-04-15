@@ -540,6 +540,14 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-44');
       }()
 
+    ),
+
+    '(45) Should allow the value of 0 in convention mapping case': (
+
+      function() {
+        return common.createTest('test-45');
+      }()
+
     )
   }
 
