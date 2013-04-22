@@ -484,20 +484,177 @@
 <div id="key1" style="visible: foobar > 1">value1</div>
 
 </script>
-
-<script type="test/fixture" id="test-30.json">
-{ "uppercase": "UPPERCASED" }
-
-</script>
 <script type="test/fixture" id="test-30.html">
 <div class="transformation"></div>
+
+</script>
+<script type="test/fixture" id="test-30.json">
+{ "uppercase": "UPPERCASED" }
 
 </script>
 <script type="test/fixture" id="test-30.out">
 <div class="transformation">uppercased</div>
 
 </script>
+<script type="test/fixture" id="test-31.html">
+<a class="author" href=""></a>
+</script>
+<script type="test/fixture" id="test-31.json">
+{
+  "name": "The Name",
+  "url": "//the.url.com/abc"
+}
+</script>
+<script type="test/fixture" id="test-31.out">
+<a class="author" href="//the.url.com/abc">The Name</a>
+</script>
+<script type="test/fixture" id="test-32.html">
+<a class="author" href=""></a>
+</script>
+<script type="test/fixture" id="test-32.json">
+{
+  "name": "The Name",
+  "url": "//the.url.com/abc"
+}
+</script>
+<script type="test/fixture" id="test-32.out">
+<a class="author" href="//the.url.com/abc">The Name</a>
+</script>
+<script type="test/fixture" id="test-34.html">
+<a class="author" href=""></a>
+</script>
+<script type="test/fixture" id="test-34.json">
+{
+  "class": "class1 author",
+  "url": "//the.url.com/abc"
+}
+</script>
+<script type="test/fixture" id="test-34.out">
+<a class="class1 author" href="//the.url.com/abc"></a>
+</script>
+<script type="test/fixture" id="test-35.html">
+<a class="author" href=""></a>
+</script>
+<script type="test/fixture" id="test-35.json">
+{
+  "name": "The Name",
+  "class": "class1 author",
+  "url": "//the.url.com/abc"
+}
+</script>
+<script type="test/fixture" id="test-35.out">
+<a class="class1 author" href="//the.url.com/abc">The Name</a>
+</script>
+<script type="test/fixture" id="test-36.html">
+<div class="authors">
+  <ul>
+    <li class="author">
+      <h2 class="title"></h2>
+      <a class="name" href="">The author name is<span class="inner"></span></a>
+    </li>
+  </ul>
+</div>
+</script>
+<script type="test/fixture" id="test-36.json">
+{
+  "author":
+    { "name": {"inner": "Author 1"}, "title": "Title 1", "link": "//1" }
+}
+</script>
+<script type="test/fixture" id="test-36.out">
+<div class="authors">
+  <ul>
+    <li class="author">
+      <h2 class="title">Title 1</h2>
+      <a class="name" href="//1">The author name is<span class="inner">Author 1</span></a>
+    </li>
+  </ul>
+</div>
+</script>
+<script type="test/fixture" id="test-37.html">
+<div class="authors">
+  <ul>
+    <li class="author">
+      <h2 class="title"></h2>
+      <a class="name" href="">The author name is<span class="inner"></span></a>
+    </li>
+  </ul>
+</div>
+</script>
+<script type="test/fixture" id="test-37.json">
+{
+  "author": [
+    { "name": {"inner": "Author 1"}, "title": "Title 1", "link": "//1" },
+    { "name": {"inner": "Author 2"}, "title": "Title 2", "link": "//2" },
+    { "name": {"inner": "Author 3"}, "title": "Title 3", "link": "//3" }
+  ]
+}
+</script>
+<script type="test/fixture" id="test-37.out">
+<div class="authors">
+  <ul>
+    <li class="author">
+      <h2 class="title">Title 1</h2>
+      <a class="name" href="//1">The author name is<span class="inner">Author 1</span></a>
+    </li><li class="author">
+      <h2 class="title">Title 2</h2>
+      <a class="name" href="//2">The author name is<span class="inner">Author 2</span></a>
+    </li><li class="author">
+      <h2 class="title">Title 3</h2>
+      <a class="name" href="//3">The author name is<span class="inner">Author 3</span></a>
+    </li>
+  </ul>
+</div>
+</script>
+<script type="test/fixture" id="test-38.html">
+<div class="authors">
+  <ul>
+    <li class="author">
+      <a class="name">The author name is<span class= "inner">Author 1</span></a>
+    </li>
+  </ul>
+</div>
 
+</script>
+<script type="test/fixture" id="test-38.json">
+{ "inner": "Author 1" }
+
+</script>
+<script type="test/fixture" id="test-38.out">
+<div class="authors">
+  <ul>
+    <li class="author">
+      <a class="name">The author name is<span class= "inner">Author 1</span></a>
+    </li>
+  </ul>
+</div>
+
+</script>
+<script type="test/fixture" id="test-39.html">
+<div class="row-fluid content">
+
+  <div class="span4" role="complementary">
+    <h2>Authors</h2>
+    <div class="author"></div>
+  </div>
+
+</div>
+</script>
+<script type="test/fixture" id="test-39.json">
+{
+  "author":["ABC","DEF"]
+}
+</script>
+<script type="test/fixture" id="test-39.out">
+<div class="row-fluid content">
+
+  <div class="span4" role="complementary">
+    <h2>Authors</h2>
+    <div class="author">ABC</div><div class="author">DEF</div>
+  </div>
+
+</div>
+</script>
 <script type="test/fixture" id="test-4.html">
 <a id="someid" src="google.com"></a>
 <a id="someotherid" src="yahoo.com"></a>
@@ -512,6 +669,159 @@
 <a id="someid" src="google.com">Google</a>
 <a id="someotherid" src="yahoo.com">Yahoo!</a>
 </script>
+<script type="test/fixture" id="test-40.html">
+<ul>
+  <li class="zero"></li>
+  <li class="one"></li>
+  <li class="banana"></li>
+</ul>
+
+</script>
+<script type="test/fixture" id="test-40.json">
+{
+  "counts": {
+    "zero": 0,
+    "one": 1
+  },
+  "ringring": "bananaphone"
+}
+
+</script>
+<script type="test/fixture" id="test-40.out">
+<ul>
+  <li class="zero">0</li>
+  <li class="one">1</li>
+  <li class="banana">bananaphone</li>
+</ul>
+
+</script>
+<script type="test/fixture" id="test-41.html">
+<form class="ssl">
+  <fieldset>
+    <input type="text">
+    <textarea></textarea>
+  </fieldset>
+  <fieldset>
+    <input type="text">
+    <textarea></textarea>
+  </fieldset>
+  <fieldset>
+    <input type="text">
+    <textarea></textarea>
+  </fieldset>
+</form>
+<form>
+  <fieldset>
+    <input type="text">
+    <textarea></textarea>
+  </fieldset>
+</form>
+
+</script>
+<script type="test/fixture" id="test-41.json">
+{}
+
+</script>
+<script type="test/fixture" id="test-41.out">
+
+<form>
+  <fieldset>
+    <input type="text">
+    <textarea></textarea>
+  </fieldset>
+</form>
+
+</script>
+<script type="test/fixture" id="test-42.html">
+<div data-bind='key'></div>
+</script>
+<script type="test/fixture" id="test-42.json">
+{
+  "key": "value"
+}
+
+</script>
+<script type="test/fixture" id="test-42.out">
+<div data-bind='key'>value</div>
+</script>
+<script type="test/fixture" id="test-43.html">
+<a data-bind-href="key">Value</a>
+</script>
+<script type="test/fixture" id="test-43.json">
+{
+  "key": "/bar"
+}
+</script>
+<script type="test/fixture" id="test-43.out">
+<a data-bind-href="key" href="/bar">Value</a>
+</script>
+<script type="test/fixture" id="test-44.html">
+<div data-bind="key">Should not be changed</div>
+</script>
+<script type="test/fixture" id="test-44.json">
+{}
+</script>
+<script type="test/fixture" id="test-44.out">
+<div data-bind="key">Should not be changed</div>
+</script>
+<script type="test/fixture" id="test-45.html">
+<li id="zero"></li>
+</script>
+<script type="test/fixture" id="test-45.json">
+{
+  "zero": 0
+}
+</script>
+<script type="test/fixture" id="test-45.out">
+<li id="zero">0</li>
+</script>
+<script type="test/fixture" id="test-46.html">
+<li id="zero"></li>
+<li class="test"></li>
+</script>
+<script type="test/fixture" id="test-46.json">
+{
+  "zero": 0,
+  "one": 1
+}
+</script>
+<script type="test/fixture" id="test-46.out">
+<li id="zero">0</li>
+<li class="test">1</li>
+</script>
+<script type="test/fixture" id="test-47.html">
+<a data-bind-href="zero" data-bind-class="test" class="">link</a>
+</script>
+<script type="test/fixture" id="test-47.json">
+{
+  "zero": "/sub-zero",
+  "one": "oneclass"
+}
+</script>
+<script type="test/fixture" id="test-47.out">
+<a data-bind-href="zero" data-bind-class="test" class="oneclass" href="/sub-zero">link</a>
+</script>
+<script type="test/fixture" id="test-48.html">
+<a data-bind-href="zero" data-bind="test">link</a>
+</script>
+<script type="test/fixture" id="test-48.json">
+{
+  "zero": "/sub-zero",
+  "one": "Super link"
+}
+</script>
+<script type="test/fixture" id="test-48.out">
+<a data-bind-href="zero" data-bind="test" href="/sub-zero">Super link</a>
+</script>
+<script type="test/fixture" id="test-49.html">
+<a data-bind-href="zero" href="/some-link">link</a>
+</script>
+<script type="test/fixture" id="test-49.json">
+{}
+</script>
+<script type="test/fixture" id="test-49.out">
+<a data-bind-href="zero" href="/some-link">link</a>
+</script>
 <script type="test/fixture" id="test-5.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
 </script>
@@ -522,6 +832,30 @@
 </script>
 <script type="test/fixture" id="test-5.out">
 <a id="someid" class="red hidden large" href="/foo">New Value</a>
+</script>
+<script type="test/fixture" id="test-50.html">
+<a data-bind="test">link</a>
+</script>
+<script type="test/fixture" id="test-50.json">
+{
+  "one": "Super link",
+  "test": "Not wanted"
+}
+</script>
+<script type="test/fixture" id="test-50.out">
+<a data-bind="test">Super link</a>
+</script>
+<script type="test/fixture" id="test-51.html">
+<a class="replace" data-bind="test">link</a>
+</script>
+<script type="test/fixture" id="test-51.json">
+{
+  "one": "Super link",
+  "replaced": "replaced"
+}
+</script>
+<script type="test/fixture" id="test-51.out">
+<a class="replaced" data-bind="test">Super link</a>
 </script>
 <script type="test/fixture" id="test-6.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
@@ -537,7 +871,7 @@
 </script>
 <script type="test/fixture" id="test-7.html">
 <a id="someid1" class="name" href="/foo"></a>
-<a id="someid2" class="name" href="/foo"></a>
+<a id="someid2" onclick="name" href="/foo"></a>
 </script>
 <script type="test/fixture" id="test-7.json">
 {
@@ -546,7 +880,7 @@
 </script>
 <script type="test/fixture" id="test-7.out">
 <a id="someid1" class="name" href="/foo">Alpha</a>
-<a id="someid2" class="name" href="/foo">Alpha</a>
+<a id="someid2" onclick="name" href="/foo"></a>
 </script>
 <script type="test/fixture" id="test-8.html">
 <a href="/"></a>
@@ -694,7 +1028,11 @@ test("(11) differing on \"is\" parameter only.", function () {
 });
 
 test("(12) iterate a collection of over an element with children.", function () {
-  return common.createTest('test-12');
+  var map = Plates.Map({
+    where: 'class'
+  });
+
+  return common.createTest('test-12', map);
 });
 
 test("(13) attributes can contain valid characters", function () {
@@ -706,7 +1044,9 @@ test("(13) attributes can contain valid characters", function () {
 
 test("(14) It should be able to iterate over collections with maps", function () {
   var map = Plates.Map();
-  map.className("names").use("names");
+  map.class("names").use("names");
+  map.class("first").use("first");
+  map.class("last").use("last");
 
   return common.createTest('test-14', map);
 });
@@ -714,17 +1054,28 @@ test("(14) It should be able to iterate over collections with maps", function ()
 test("(15) It should be able to iterate over collections with multiple maps", function () {
   var map = Plates.Map();
   map.where("href").is("placeholder").insert("link");
-  map.className("names").use("names");
+  map.class("names").use("names");
+  map.class("first").use("first");
+  map.class("middle").use("middle");
+  map.class("last").use("last");
 
   return common.createTest('test-15', map);
 });
 
 test("(16) It should be able to iterate over simple arrays", function () {
-  return common.createTest('test-16');
+  var map = Plates.Map({
+    where: 'class'
+  });
+
+  return common.createTest('test-16', map);
 });
 
 test("(17) It should be able to iterate over deeply nested objects", function () {
-  return common.createTest('test-17');
+  var map = Plates.Map({
+    where: 'class'
+  });
+
+  return common.createTest('test-17', map);
 });
 
 test("(18) It should be able to see the classnames properly", function () {
@@ -821,13 +1172,182 @@ test("(29) a tag match without attributes should replace the contents", function
  return common.createTest('test-29', map);
 });
 
-test("(30) use can be passed a function which returns the value", function() {
+test("(30) use can be passed a function which returns the value", function () {
   var map = Plates.Map();
   map.class('transformation').use(function (data, key) {
     return data.uppercase.toLowerCase();
   });
 
   return common.createTest('test-30', map);
+});
+
+test("(31) Two maps on the same class, one for attribute work if the attribute one comes last", function () {
+  var map = Plates.Map();
+  map.class('author').to('name');
+  map.class('author').use('url').as('href');
+
+  return common.createTest('test-31', map);
+});
+
+test("(32) Two maps on the same class, one for attribute work if the attribute one comes first", function () {
+  var map = Plates.Map();
+  map.class('author').use('url').as('href');
+  map.class('doesnotexist').to('donotcare');
+  map.class('author').to('name');
+
+  return common.createTest('test-32', map);
+});
+
+test("(33) Two maps on the same attribute and value should throw", function () {
+  var map = Plates.Map();
+  var result = {};
+  map.class('author').use('url').as('href');
+  map.class('author').to('name');
+  map.class('author').to('name');
+
+  try {
+    Plates.bind('<a></a>', {a:1}, map);
+  } catch(err) {
+    result.error = err;
+  }
+
+  QUnit.assert.ok(!! result.error, 'Should have thrown');
+  QUnit.assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
+});
+
+test("(34) Two maps for the same class, updating two attributes should update both attributes", function () {
+  var map = Plates.Map();
+  map.class('author').use('url').as('href');
+  map.class('author').use('class').as('class');
+
+  return common.createTest('test-34', map);
+});
+
+test("(35) Two maps for the same class, updating two attributes plus a body class map should update both attributes", function () {
+  var map = Plates.Map();
+  map.class('author').use('url').as('href');
+  map.class('author').use('class').as('class');
+  map.class('author').to('name');
+
+  return common.createTest('test-35', map);
+});
+
+test("(36) complex nesting should work as expected", function () {
+  var map = Plates.Map();
+  map.class('author').use('author');
+  map.class('name').use('name');
+  map.class('name').use('link').as('href');
+  map.class('title').use('title');
+  map.class('inner').use('inner');
+
+  return common.createTest('test-36', map);
+});
+
+test("(37) complex nesting with arrays should work as expected", function () {
+  var map = Plates.Map();
+  map.class('author').use('author');
+  map.class('name').use('name');
+  map.class('name').use('link').as('href');
+  map.class('title').use('title');
+  map.class('inner').use('inner');
+
+  return common.createTest('test-37', map);
+});
+
+test("(38) spaces in attributes", function () {
+  var map = Plates.Map();
+  map.class('inner').use('inner');
+
+  return common.createTest('test-38', map);
+});
+
+test("(39) Nesting arrays with objects with arrays should work", function () {
+  var map = Plates.Map();
+
+  map.className('author').to('author');
+
+  return common.createTest('test-39', map);
+});
+
+test("(40) Nested objects can be accessed using dot notiation", function () {
+  var map = Plates.Map();
+
+  map.className('zero').to('counts.zero');
+  map.className('one').to('counts.one');
+  map.className('banana').to('ringring');
+
+  return common.createTest('test-40', map);
+});
+
+test("(41) Should remove the correct element", function () {
+  var map = Plates.Map();
+
+  map.className('ssl').remove();
+
+  return common.createTest('test-41', map);
+});
+
+test("(42) Support data-bind without mapping", function () {
+  return common.createTest('test-42');
+});
+
+test("(43) Support data-bind-attr without mapping", function () {
+  return common.createTest('test-43');
+});
+
+test("(44) Non matching data-bind should do nothing", function () {
+  return common.createTest('test-44');
+});
+
+test("(45) Should allow the value of 0 in convention mapping case", function () {
+  return common.createTest('test-45');
+});
+
+test("(46) Should allow mixing convention and configuration", function () {
+  var map = Plates.Map();
+
+  map.class('test').to('one');
+
+  return common.createTest('test-46', map);
+});
+
+test("(47) Should allow mixing convention and configuration for attributes", function () {
+  var map = Plates.Map();
+
+  map.where('data-bind-class').is('test').use('one').as('class');
+
+  return common.createTest('test-47', map);
+});
+
+test("(48) Should allow mixing convention (for an attribute) and configuration (for tag content)", function () {
+  var map = Plates.Map();
+
+  map.where('data-bind').is('test').use('one');
+
+  return common.createTest('test-48', map);
+});
+
+test("(49) Should only set attribute (data-bind-attr) if data exists", function () {
+  return common.createTest('test-49');
+});
+
+test("(50) Do not apply default mapping if explicit mapping is set", function () {
+  var map = Plates.Map();
+
+  map.where('data-bind').is('test').use(function (data, key) {
+    return (data['one']);
+  });
+
+  return common.createTest('test-50', map);
+});
+
+test("(51) Allow two mappings matching one tag, one attribute and one content", function () {
+  var map = Plates.Map();
+
+  map.where('class').is('replace').insert('replaced');
+  map.where('data-bind').is('test').use('one');
+
+  return common.createTest('test-51', map);
 });
 
 </script>

@@ -131,7 +131,11 @@ vows.describe('merge data into markup').addBatch({
     '(12) iterate a collection of over an element with children.': (
 
       function() {
-        return common.createTest('test-12');
+        var map = Plates.Map({
+          where: 'class'
+        });
+
+        return common.createTest('test-12', map);
       }()
 
     ),
@@ -178,7 +182,11 @@ vows.describe('merge data into markup').addBatch({
     '(16) It should be able to iterate over simple arrays': (
 
       function() {
-        return common.createTest('test-16');
+        var map = Plates.Map({
+          where: 'class'
+        });
+
+        return common.createTest('test-16', map);
       }()
 
     ),
@@ -186,7 +194,11 @@ vows.describe('merge data into markup').addBatch({
     '(17) It should be able to iterate over deeply nested objects': (
 
       function() {
-        return common.createTest('test-17');
+        var map = Plates.Map({
+          where: 'class'
+        });
+
+        return common.createTest('test-17', map);
       }()
 
     ),
@@ -374,7 +386,6 @@ vows.describe('merge data into markup').addBatch({
 
     '(33) Two maps on the same attribute and value should throw': (
 
-
       function() {
         var map = Plates.Map();
         map.class('author').use('url').as('href');
@@ -399,12 +410,11 @@ vows.describe('merge data into markup').addBatch({
             assert.equal(result.error.message, 'Conflicting mappings for attribute class and value author');
           }
         };
-
       }()
 
     ),
 
-    '(34) Two maps for thr same class, updating two attributes should update both attributes': (
+    '(34) Two maps for the same class, updating two attributes should update both attributes': (
 
       function() {
         var map = Plates.Map();
@@ -416,7 +426,7 @@ vows.describe('merge data into markup').addBatch({
 
     ),
 
-    '(35) Two maps for thr same class, updating two attributes plus a body class map should update both attributes': (
+    '(35) Two maps for the same class, updating two attributes plus a body class map should update both attributes': (
 
       function() {
         var map = Plates.Map();
@@ -480,6 +490,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-39', map);
       }()
+
     ),
 
     '(40) Nested objects can be accessed using dot notiation': (
@@ -493,6 +504,7 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-40', map);
       }()
+
     ),
 
     '(41) Should remove the correct element': (
@@ -504,6 +516,110 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+
+    ),
+
+    '(42) Support data-bind without mapping': (
+
+      function() {
+        return common.createTest('test-42');
+      }()
+
+    ),
+
+    '(43) Support data-bind-attr without mapping': (
+
+      function() {
+        return common.createTest('test-43');
+      }()
+
+    ),
+
+    '(44) Non matching data-bind should do nothing': (
+
+      function() {
+        return common.createTest('test-44');
+      }()
+
+    ),
+
+    '(45) Should allow the value of 0 in convention mapping case': (
+
+      function() {
+        return common.createTest('test-45');
+      }()
+
+    ),
+
+    '(46) Should allow mixing convention and configuration': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.class('test').to('one');
+
+        return common.createTest('test-46', map);
+      }()
+
+    ),
+
+    '(47) Should allow mixing convention and configuration for attributes': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('data-bind-class').is('test').use('one').as('class');
+
+        return common.createTest('test-47', map);
+      }()
+
+    ),
+
+    '(48) Should allow mixing convention (for an attribute) and configuration (for tag content)': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('data-bind').is('test').use('one');
+
+        return common.createTest('test-48', map);
+      }()
+
+    ),
+
+    '(49) Should only set attribute (data-bind-attr) if data exists': (
+
+      function() {
+        return common.createTest('test-49');
+      }()
+
+    ),
+
+    '(50) Do not apply default mapping if explicit mapping is set': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('data-bind').is('test').use(function (data, key) {
+          return (data['one']);
+        });
+
+        return common.createTest('test-50', map);
+      }()
+
+    ),
+
+    '(51) Allow two mappings matching one tag, one attribute and one content': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('class').is('replace').insert('replaced');
+        map.where('data-bind').is('test').use('one');
+
+        return common.createTest('test-51', map);
+      }()
+
     )
   }
 
