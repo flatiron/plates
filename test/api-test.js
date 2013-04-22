@@ -607,6 +607,19 @@ vows.describe('merge data into markup').addBatch({
         return common.createTest('test-50', map);
       }()
 
+    ),
+
+    '(51) Allow two mappings matching one tag, one attribute and one content': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.where('class').is('replace').insert('replaced');
+        map.where('data-bind').is('test').use('one');
+
+        return common.createTest('test-51', map);
+      }()
+
     )
   }
 

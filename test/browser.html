@@ -845,6 +845,18 @@
 <script type="test/fixture" id="test-50.out">
 <a data-bind="test">Super link</a>
 </script>
+<script type="test/fixture" id="test-51.html">
+<a class="replace" data-bind="test">link</a>
+</script>
+<script type="test/fixture" id="test-51.json">
+{
+  "one": "Super link",
+  "replaced": "replaced"
+}
+</script>
+<script type="test/fixture" id="test-51.out">
+<a class="replaced" data-bind="test">Super link</a>
+</script>
 <script type="test/fixture" id="test-6.html">
 <a id="someid" class="red hidden large" href="/foo">Old Value</a>
 </script>
@@ -1327,6 +1339,15 @@ test("(50) Do not apply default mapping if explicit mapping is set", function ()
   });
 
   return common.createTest('test-50', map);
+});
+
+test("(51) Allow two mappings matching one tag, one attribute and one content", function () {
+  var map = Plates.Map();
+
+  map.where('class').is('replace').insert('replaced');
+  map.where('data-bind').is('test').use('one');
+
+  return common.createTest('test-51', map);
 });
 
 </script>
