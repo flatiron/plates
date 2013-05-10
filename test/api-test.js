@@ -504,6 +504,15 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+    ),
+
+    '(42) Should not replace element content': (
+
+      function() {
+        var map = Plates.Map();
+
+        return common.createTest('test-42', map);
+      }()
     )
   }
 
