@@ -504,6 +504,31 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+    ),
+
+    '(42) Should bind according to the mapping for an array': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.class("names").use("names");
+        map.class("last").use("lastname");
+
+        return common.createTest('test-42', map);
+      }()
+    ),
+
+    '(43) Should bind to according to the mapping for an object': (
+
+      function() {
+        var map = Plates.Map();
+
+        map.class("name").use("fullname");
+        map.class("first").use("firstname");
+        map.class("last").use("lastname");
+
+        return common.createTest('test-43', map);
+      }()
     )
   }
 
