@@ -504,6 +504,15 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-41', map);
       }()
+    ),
+
+    '(42) Should iterate from current position, to prevent double replacements': (
+
+      function() {
+        var map = Plates.Map();
+
+        return common.createTest('test-42', map);
+      }()
     )
   }
 
