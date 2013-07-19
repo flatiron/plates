@@ -107,7 +107,7 @@ vows.describe('merge data into markup').addBatch({
           create: true
         });
 
-        map.class('logo').use('url').as('src');
+        map.className('logo').use('url').as('src');
         map.where('name').is('first_name').use('fname').as('value');
         map.where('name').is('last_name').use('lname').as('value');
 
@@ -155,9 +155,9 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class("names").use("names");
-        map.class("first").use("first");
-        map.class("last").use("last");
+        map.className("names").use("names");
+        map.className("first").use("first");
+        map.className("last").use("last");
 
         return common.createTest('test-14', map);
       }()
@@ -169,10 +169,10 @@ vows.describe('merge data into markup').addBatch({
       function() {
         var map = Plates.Map();
         map.where("href").is("placeholder").insert("link");
-        map.class("names").use("names");
-        map.class("first").use("first");
-        map.class("middle").use("middle");
-        map.class("last").use("last");
+        map.className("names").use("names");
+        map.className("first").use("first");
+        map.className("middle").use("middle");
+        map.className("last").use("last");
 
         return common.createTest('test-15', map);
       }()
@@ -207,8 +207,8 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class("username").use("username");
-        map.class("name").use("name");
+        map.className("username").use("username");
+        map.className("name").use("name");
 
         return common.createTest('test-18', map);
       }()
@@ -241,7 +241,7 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('removed').remove();
+        map.className('removed').remove();
 
         return common.createTest('test-21', map);
       }()
@@ -274,7 +274,7 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('insert').append('<div class="trolling"></div>');
+        map.className('insert').append('<div class="trolling"></div>');
 
         return common.createTest('test-24', map);
       }()
@@ -287,8 +287,8 @@ vows.describe('merge data into markup').addBatch({
         var map = Plates.Map();
         var partial = Plates.Map();
 
-        partial.class('trolling').to('boink');
-        map.class('insert').append('<div class="trolling"></div>', { boink: 'moo' }, partial);
+        partial.className('trolling').to('boink');
+        map.className('insert').append('<div class="trolling"></div>', { boink: 'moo' }, partial);
 
         return common.createTest('test-25', map);
       }()
@@ -301,8 +301,8 @@ vows.describe('merge data into markup').addBatch({
         var map = Plates.Map();
         var partial = Plates.Map();
 
-        partial.class('trolling').to('boink');
-        map.class('insert').append('<div class="trolling"></div>', 'partial', partial);
+        partial.className('trolling').to('boink');
+        map.className('insert').append('<div class="trolling"></div>', 'partial', partial);
 
         return common.createTest('test-26', map);
       }()
@@ -315,7 +315,7 @@ vows.describe('merge data into markup').addBatch({
         var map = Plates.Map();
         var partial = Plates.Map();
 
-        map.class('insert').append('./test/fixtures/partial-1.html');
+        map.className('insert').append('./test/fixtures/partial-1.html');
 
         return common.createTest('test-27', map);
       }()
@@ -328,7 +328,7 @@ vows.describe('merge data into markup').addBatch({
         var map = Plates.Map();
         var partial = Plates.Map();
 
-        map.class('insert').append('./test/fixtures/partial-1.html', [{}, {}, {}]);
+        map.className('insert').append('./test/fixtures/partial-1.html', [{}, {}, {}]);
 
         return common.createTest('test-28', map);
       }()
@@ -350,7 +350,7 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('transformation').use(function (data, key) {
+        map.className('transformation').use(function (data, key) {
           return data.uppercase.toLowerCase();
         });
 
@@ -363,8 +363,8 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').to('name');
-        map.class('author').use('url').as('href');
+        map.className('author').to('name');
+        map.className('author').use('url').as('href');
 
         return common.createTest('test-31', map);
       }()
@@ -375,9 +375,9 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').use('url').as('href');
-        map.class('doesnotexist').to('donotcare');
-        map.class('author').to('name');
+        map.className('author').use('url').as('href');
+        map.className('doesnotexist').to('donotcare');
+        map.className('author').to('name');
 
         return common.createTest('test-32', map);
       }()
@@ -388,9 +388,9 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').use('url').as('href');
-        map.class('author').to('name');
-        map.class('author').to('name');
+        map.className('author').use('url').as('href');
+        map.className('author').to('name');
+        map.className('author').to('name');
 
         return {
           topic: function() {
@@ -418,8 +418,8 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').use('url').as('href');
-        map.class('author').use('class').as('class');
+        map.className('author').use('url').as('href');
+        map.className('author').use('class').as('class');
 
         return common.createTest('test-34', map);
       }()
@@ -430,9 +430,9 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').use('url').as('href');
-        map.class('author').use('class').as('class');
-        map.class('author').to('name');
+        map.className('author').use('url').as('href');
+        map.className('author').use('class').as('class');
+        map.className('author').to('name');
 
         return common.createTest('test-35', map);
       }()
@@ -443,11 +443,11 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').use('author');
-        map.class('name').use('name');
-        map.class('name').use('link').as('href');
-        map.class('title').use('title');
-        map.class('inner').use('inner');
+        map.className('author').use('author');
+        map.className('name').use('name');
+        map.className('name').use('link').as('href');
+        map.className('title').use('title');
+        map.className('inner').use('inner');
 
         return common.createTest('test-36', map);
       }()
@@ -458,11 +458,11 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('author').use('author');
-        map.class('name').use('name');
-        map.class('name').use('link').as('href');
-        map.class('title').use('title');
-        map.class('inner').use('inner');
+        map.className('author').use('author');
+        map.className('name').use('name');
+        map.className('name').use('link').as('href');
+        map.className('title').use('title');
+        map.className('inner').use('inner');
 
         return common.createTest('test-37', map);
       }()
@@ -473,7 +473,7 @@ vows.describe('merge data into markup').addBatch({
 
       function() {
         var map = Plates.Map();
-        map.class('inner').use('inner');
+        map.className('inner').use('inner');
 
         return common.createTest('test-38', map);
 
@@ -556,7 +556,7 @@ vows.describe('merge data into markup').addBatch({
       function() {
         var map = Plates.Map();
 
-        map.class('test').to('one');
+        map.className('test').to('one');
 
         return common.createTest('test-46', map);
       }()

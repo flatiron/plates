@@ -1044,9 +1044,9 @@ test("(13) attributes can contain valid characters", function () {
 
 test("(14) It should be able to iterate over collections with maps", function () {
   var map = Plates.Map();
-  map.class("names").use("names");
-  map.class("first").use("first");
-  map.class("last").use("last");
+  map.className("names").use("names");
+  map.className("first").use("first");
+  map.className("last").use("last");
 
   return common.createTest('test-14', map);
 });
@@ -1054,10 +1054,10 @@ test("(14) It should be able to iterate over collections with maps", function ()
 test("(15) It should be able to iterate over collections with multiple maps", function () {
   var map = Plates.Map();
   map.where("href").is("placeholder").insert("link");
-  map.class("names").use("names");
-  map.class("first").use("first");
-  map.class("middle").use("middle");
-  map.class("last").use("last");
+  map.className("names").use("names");
+  map.className("first").use("first");
+  map.className("middle").use("middle");
+  map.className("last").use("last");
 
   return common.createTest('test-15', map);
 });
@@ -1174,7 +1174,7 @@ test("(29) a tag match without attributes should replace the contents", function
 
 test("(30) use can be passed a function which returns the value", function () {
   var map = Plates.Map();
-  map.class('transformation').use(function (data, key) {
+  map.className('transformation').use(function (data, key) {
     return data.uppercase.toLowerCase();
   });
 
@@ -1183,17 +1183,17 @@ test("(30) use can be passed a function which returns the value", function () {
 
 test("(31) Two maps on the same class, one for attribute work if the attribute one comes last", function () {
   var map = Plates.Map();
-  map.class('author').to('name');
-  map.class('author').use('url').as('href');
+  map.className('author').to('name');
+  map.className('author').use('url').as('href');
 
   return common.createTest('test-31', map);
 });
 
 test("(32) Two maps on the same class, one for attribute work if the attribute one comes first", function () {
   var map = Plates.Map();
-  map.class('author').use('url').as('href');
-  map.class('doesnotexist').to('donotcare');
-  map.class('author').to('name');
+  map.className('author').use('url').as('href');
+  map.className('doesnotexist').to('donotcare');
+  map.className('author').to('name');
 
   return common.createTest('test-32', map);
 });
@@ -1201,9 +1201,9 @@ test("(32) Two maps on the same class, one for attribute work if the attribute o
 test("(33) Two maps on the same attribute and value should throw", function () {
   var map = Plates.Map();
   var result = {};
-  map.class('author').use('url').as('href');
-  map.class('author').to('name');
-  map.class('author').to('name');
+  map.className('author').use('url').as('href');
+  map.className('author').to('name');
+  map.className('author').to('name');
 
   try {
     Plates.bind('<a></a>', {a:1}, map);
@@ -1217,46 +1217,46 @@ test("(33) Two maps on the same attribute and value should throw", function () {
 
 test("(34) Two maps for the same class, updating two attributes should update both attributes", function () {
   var map = Plates.Map();
-  map.class('author').use('url').as('href');
-  map.class('author').use('class').as('class');
+  map.className('author').use('url').as('href');
+  map.className('author').use('class').as('class');
 
   return common.createTest('test-34', map);
 });
 
 test("(35) Two maps for the same class, updating two attributes plus a body class map should update both attributes", function () {
   var map = Plates.Map();
-  map.class('author').use('url').as('href');
-  map.class('author').use('class').as('class');
-  map.class('author').to('name');
+  map.className('author').use('url').as('href');
+  map.className('author').use('class').as('class');
+  map.className('author').to('name');
 
   return common.createTest('test-35', map);
 });
 
 test("(36) complex nesting should work as expected", function () {
   var map = Plates.Map();
-  map.class('author').use('author');
-  map.class('name').use('name');
-  map.class('name').use('link').as('href');
-  map.class('title').use('title');
-  map.class('inner').use('inner');
+  map.className('author').use('author');
+  map.className('name').use('name');
+  map.className('name').use('link').as('href');
+  map.className('title').use('title');
+  map.className('inner').use('inner');
 
   return common.createTest('test-36', map);
 });
 
 test("(37) complex nesting with arrays should work as expected", function () {
   var map = Plates.Map();
-  map.class('author').use('author');
-  map.class('name').use('name');
-  map.class('name').use('link').as('href');
-  map.class('title').use('title');
-  map.class('inner').use('inner');
+  map.className('author').use('author');
+  map.className('name').use('name');
+  map.className('name').use('link').as('href');
+  map.className('title').use('title');
+  map.className('inner').use('inner');
 
   return common.createTest('test-37', map);
 });
 
 test("(38) spaces in attributes", function () {
   var map = Plates.Map();
-  map.class('inner').use('inner');
+  map.className('inner').use('inner');
 
   return common.createTest('test-38', map);
 });
@@ -1306,7 +1306,7 @@ test("(45) Should allow the value of 0 in convention mapping case", function () 
 test("(46) Should allow mixing convention and configuration", function () {
   var map = Plates.Map();
 
-  map.class('test').to('one');
+  map.className('test').to('one');
 
   return common.createTest('test-46', map);
 });
