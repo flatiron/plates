@@ -1,0 +1,4 @@
+<div>
+  <div id="include" data-ng-include="'path/to/partial'">Include</div>
+  <div id="show" data-ng-show="svc.prop == 'val'">Show</div>
+</div>

@@ -513,6 +513,14 @@ vows.describe('merge data into markup').addBatch({
 
         return common.createTest('test-42', map);
       }()
+    ),
+
+    '(43) Should replace correctly when attribute value contains quotes': (
+      function(){
+        var map = Plates.Map();
+
+        return common.createTest('test-43', map);
+      }()
     )
   }
 
