@@ -8,15 +8,7 @@
     "unobtrusive"
   ],
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
-  "maintainers": [
-    "hij1nx <paolo@nodejitsu.com>",
-    "pksunkara <pavan@nodejitsu.com>"
-  ],
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
+  "license": "MIT",
   "repositories": [
     {
       "type": "git",
