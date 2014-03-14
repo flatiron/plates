@@ -1,6 +1,6 @@
 {
   "name": "plates",
-  "version": "0.4.8",
+  "version": "0.4.9",
   "description": "Unobtrusive templating for the flatiron framework",
   "keywords": [
     "templates",
@@ -28,4 +28,3 @@
   ],
   "main": "./lib/plates.js"
 }
-
