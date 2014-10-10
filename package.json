@@ -9,12 +9,10 @@
   ],
   "author": "Nodejitsu Inc. <info@nodejitsu.com>",
   "license": "MIT",
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git://github.com/flatiron/plates.git"
-    }
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/flatiron/plates.git"
+  },
   "devDependencies": {
     "vows": "0.7.x",
     "mustache": "0.4.x",
