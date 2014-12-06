@@ -7,16 +7,29 @@
     "templating",
     "unobtrusive"
   ],
-  "author": "Nodejitsu Inc. <info@nodejitsu.com>",
+  "contributors": [
+    {
+      "name": "Paolo Fragomeni",
+      "email": "paolo.fra@gmail.com"
+    },
+    {
+      "name": "Arnout Kazemier",
+      "email": "arnout@nodejitsu.com"
+    },
+    {
+      "name": "Martijn Swaagman",
+      "email": "martijn@nodejitsu.com"
+    }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/flatiron/plates.git"
   },
   "devDependencies": {
-    "vows": "0.7.x",
-    "mustache": "0.4.x",
-    "benchmark": "0.2.x"
+    "vows": "0.8.x",
+    "mustache": "~0.8.2",
+    "benchmark": "~1.0.0"
   },
   "scripts": {
     "test": "vows --spec test/api-test.js"

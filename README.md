@@ -37,7 +37,7 @@ var Plates = require('plates');
 var html = '<div id="test">Old Value</div>';
 var data = { "test": "New Value" };
 
-var output = Plates.bind(html, data); 
+var output = Plates.bind(html, data);
 ```
 
 ## Explicit instructions
@@ -187,7 +187,7 @@ function Map#has(value)
 
 ```
 function Map#insert(attribute)
-@param attribute {String} A string that represents a key. Data will be inserted into 
+@param attribute {String} A string that represents a key. Data will be inserted into
 the attribute that was specified in the `where` clause.
 ```
 
@@ -250,7 +250,7 @@ that you gave it a file path that is relative to the current working directory.
 
 (The MIT License)
 
-Copyright (c) 2011 Nodejitsu Inc. http://www.twitter.com/nodejitsu
+Copyright (c) 2011 Arnout Kazemier, Martijn Swaagman, & the Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the 'Software'), to deal in
