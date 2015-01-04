@@ -4,7 +4,7 @@
 Plates (short for templates) binds data to markup. Plates has NO special syntax. It works in the browser and in [Node.js](http://nodejs.org/).
 
 # Motivation
-- DSLs (Domain Specific Languages) such as <%=foo%> or {{foo}} reduce portability.
+- DSLs (Domain Specific Languages) such as `<%=foo%>` or `{{foo}}` reduce portability.
 - DOM templating is SLOW.
 - Promote the separation of concerns principle by decoupling decision making from presentation.
 - Make both the code and markup more readable and maintainable by a wider audience.
