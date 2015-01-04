@@ -5,9 +5,14 @@ branches:
 node_js:
   - "0.8"
   - "0.10"
-
+before_install:
+  - '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
+  - "npm install -g npm@2.1.9"
 notifications:
   email:
-    - travis@nodejitsu.com
-  irc: "irc.freenode.org#nodejitsu"
-
+    - "travis@nodejitsu.com"
+  irc: 
+    channels:
+    - "irc.freenode.org#nodejitsu"
+    on_success: change
+    on_failure: change
