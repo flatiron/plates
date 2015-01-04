@@ -22,7 +22,7 @@ Plates (short for templates) binds data to markup. Plates has NO special syntax.
 
 # Installation
 There are a few ways to use `plates`. Install the library using npm. You can add
-it to your `package.json` file as a dependancy, or include the script in your
+it to your `package.json` file as a dependency, or include the script in your
 HTML page.
 
 # Usage
